@@ -44,11 +44,20 @@ export function Footer() {
           INFO@STROITDOMA.PRO
         </a>{" "}
         <br />
+        <a className={styles.item_link} href="tel:+74953747477">
+          +7 (495) 374 7477
+        </a>{" "}
+        <br />
         <a className={styles.item_link} href="tel:+79197843396">
           +7 (919) 784 3396
         </a>{" "}
         <br />
         <span className={styles.item_span}>(WhatsApp)</span>
+        <br />
+        <br />
+        <span>ООО «СТРОЙ-ГАРАНТ»</span>
+        <br />
+        <span>ИНН 9721078560</span>
       </div>
     );
   }

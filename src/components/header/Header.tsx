@@ -220,6 +220,10 @@ function MenuLinkRu() {
 function MenuTelehoneRu() {
   return (
     <div className={styles.item_title}>
+      <a className={styles.item_link} href="tel:+74953747477">
+        +7 495 374 7477
+      </a>{" "}
+      <br />
       <a className={styles.item_link} href="tel:+79197843396">
         +7 919 784 3396
       </a>{" "}
