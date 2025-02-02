@@ -1,5 +1,7 @@
 .information {
+  margin-top: 65px;
   height: auto;
+  margin-bottom: 20px;
 }
 
 .information_text {
@@ -8,4 +10,37 @@
   background-color: var(--grey-color);
   display: flex;
   flex-direction: column;
+  font-size: 45px;
+  line-height: 1;
+  letter-spacing: -1px;
+  border-radius: 5px;
+  padding: 40px 10px 20px 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-basis: 60%;
+}
+
+.information_wrapper {
+  display: flex;
+  gap: 20px;
+}
+.text {
+  height: auto;
+}
+
+.button {
+  font-family: "Inter";
+  font-weight: normal;
+  font-style: normal;
+  width: 140px;
+  height: 45px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--orange-color);
+  color: var(--white-color);
+  &:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);
+  }
 }

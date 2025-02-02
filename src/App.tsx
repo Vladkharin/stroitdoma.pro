@@ -1,5 +1,5 @@
 import "./app.css";
-import "./stylePages.css";
+// import "./stylePages.css";
 import "./fonts/stylesheet.css";
 import { MainPage } from "./components/mainPage/MainPage";
 // import { useEffect, useState } from "react";

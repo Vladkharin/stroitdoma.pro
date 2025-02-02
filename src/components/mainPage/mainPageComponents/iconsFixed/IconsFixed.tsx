@@ -18,8 +18,8 @@ export function IconsFixed() {
         <div className={styles.menu_line}></div>
       </div>
       <div className={styles.icons}>
-        {icons.map((icon) => (
-          <a href={icon.link} className={styles.icon_link}>
+        {icons.map((icon, index) => (
+          <a key={index} href={icon.link} className={styles.icon_link}>
             <img className={styles.icon} src={"./icons/" + icon.name} alt={"social media"} />
           </a>
         ))}
