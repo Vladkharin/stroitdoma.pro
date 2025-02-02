@@ -20,10 +20,6 @@
   flex-basis: 60%;
 }
 
-.information_wrapper {
-  display: flex;
-  gap: 20px;
-}
 .text {
   height: auto;
 }
@@ -42,5 +38,12 @@
   &:hover {
     background-color: var(--white-color);
     color: var(--black-color);
+  }
+}
+
+@media (min-width: 960px) {
+  .information_wrapper {
+    display: flex;
+    gap: 20px;
   }
 }
