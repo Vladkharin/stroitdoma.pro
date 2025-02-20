@@ -13,10 +13,6 @@ const icons: ICONS[] = [
 export function IconsFixed() {
   return (
     <>
-      <div className={styles.menu_button}>
-        <div className={styles.menu_line}></div>
-        <div className={styles.menu_line}></div>
-      </div>
       <div className={styles.icons}>
         {icons.map((icon, index) => (
           <a key={index} href={icon.link} className={styles.icon_link}>

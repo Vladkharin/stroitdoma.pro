@@ -1,11 +1,5 @@
 import { Information } from "./mainPageComponents/information/Information";
-// import { About } from "./mainPageComponents/about/About";
-// import { Catalog } from "./mainPageComponents/catalog/Catalog";
-// import { Technology } from "./mainPageComponents/technology/Technology";
-// import { AdditionalServices } from "./mainPageComponents/additionalServices/AdditionalServices";
-// import { Map } from "./mainPageComponents/map/Map";
-// import { Team } from "./mainPageComponents/team/Team";
-// import { Feedback } from "./mainPageComponents/feedback/Feedback";
+
 import { useEffect } from "react";
 import { IconsFixed } from "./mainPageComponents/iconsFixed/IconsFixed";
 
@@ -20,13 +14,6 @@ export function MainPage() {
     <>
       <IconsFixed />
       <Information />
-      {/* <About />
-      <Catalog />
-      <Technology />
-      <AdditionalServices />
-      <Map /> */}
-      {/* <Team /> */}
-      {/* <Feedback /> */}
     </>
   );
 }
