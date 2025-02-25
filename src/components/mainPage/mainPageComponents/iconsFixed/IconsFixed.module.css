@@ -4,7 +4,7 @@
   flex-direction: row;
   gap: 10px;
   top: 10px;
-  right: 30px;
+  right: 10px;
   z-index: 10;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@
   font-weight: normal;
   position: fixed;
   top: 100px;
-  right: 0px;
+  right: -25px;
   background-color: var(--orange-color);
   rotate: 270deg;
   padding: 10px;

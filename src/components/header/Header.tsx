@@ -5,6 +5,7 @@ import styles from "./Header.module.css";
 
 export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.SetStateAction<string>> }) {
   const [navMenuState, setNavMenuState] = useState<boolean>(false);
+
   return (
     <>
       <div
@@ -18,10 +19,10 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
         <div className={styles.menu_line}></div>
       </div>
 
-      <div className={styles.menu} style={{ opacity: navMenuState ? "1" : "0", zIndex: navMenuState ? "20" : "0" }}>
+      <div className={styles.menu} style={{ opacity: navMenuState ? "1" : "0", zIndex: navMenuState ? "20" : "-1" }}>
         <button className={styles.close_button}></button>
       </div>
-      <div className={styles.background} style={{ opacity: navMenuState ? "0.7" : "0", zIndex: navMenuState ? "15" : "0" }}></div>
+      <div className={styles.background} style={{ opacity: navMenuState ? "0.7" : "0", zIndex: navMenuState ? "15" : "-1" }}></div>
     </>
   );
 }
