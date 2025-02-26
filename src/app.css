@@ -19,31 +19,8 @@ body {
   width: 0;
 }
 
-/* .container {
-  margin: 0 auto;
-  width: 310px;
-}
-
-@media (min-width: 481px) {
-  .container {
-    width: 460px;
-  }
-}
-
-@media (min-width: 640px) {
-  .container {
-    width: 620px;
-  }
-}
-
 @media (min-width: 960px) {
-  .container {
-    width: 940px;
+  #root {
+    width: 90%;
   }
 }
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1160px;
-  }
-} */

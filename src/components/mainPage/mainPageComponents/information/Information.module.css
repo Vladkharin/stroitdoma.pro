@@ -95,7 +95,7 @@
 
 @media (min-width: 960px) {
   .information {
-    height: 100vh;
+    height: auto;
   }
 
   .text_and_swiper_wrapper {

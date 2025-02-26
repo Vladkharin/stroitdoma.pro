@@ -1,0 +1,32 @@
+import styles from "./Choose.module.css";
+
+export function Choose() {
+  return (
+    <section className={styles.section}>
+      <h2>Почему выбирают строить со СТРОИТ?</h2>
+      <div className={styles.wrapper}>
+        <div className={styles.tile}>
+          <div className={styles.tile_figure}>
+            <h3>Комплектация</h3>
+            <p className={styles.text}>Можно выбрать вариант дома на любой бюджет и самому рассчитать финальную цену в калькуляторе.</p>
+            <img src={"./icons/Subtract.svg"} alt="Subtract" />
+          </div>
+        </div>
+        <div className={styles.tile}>
+          <div className={styles.tile_figure}>
+            <h3>Строим 8 лет</h3>
+            <p className={styles.text}>Опытные бригады, собственная проверенная технология, лучшие материалы и подрядчики.</p>
+            <img src={"./icons/Subtract.svg"} alt="Subtract" />
+          </div>
+        </div>
+        <div className={styles.tile}>
+          <div className={styles.tile_figure}>
+            <h3>Под ключ в 1 ипотеку</h3>
+            <p className={styles.text}>Участок и дом со всей отделкой и коммуникациями можно заказать в 1 ипотеку.</p>
+            <img src={"./icons/Subtract.svg"} alt="Subtract" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
