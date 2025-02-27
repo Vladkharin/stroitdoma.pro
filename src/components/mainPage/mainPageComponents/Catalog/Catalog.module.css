@@ -1,0 +1,58 @@
+.section {
+  padding: 0 10px;
+}
+
+.section > h2 {
+  color: #000000;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile {
+  width: 300px;
+  height: auto;
+}
+
+.tile > img {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.tile > a {
+  color: white;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 600;
+  border-width: 1px;
+  border-radius: 4px 4px 4px 4px;
+  background-color: var(--orange-color);
+  background-position: center center;
+  border-color: var(--orange-color);
+  border-style: solid;
+  padding: 5px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: var(--orange-color);
+  }
+}
+
+@media (min-width: 960px) {
+  .wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tile {
+    flex-basis: 45%;
+  }
+}

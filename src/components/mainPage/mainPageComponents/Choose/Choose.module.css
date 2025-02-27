@@ -9,6 +9,17 @@
   width: auto;
   background-color: grey;
   padding: 20px 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.tile > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
 }
 
 .wrapper {
@@ -25,7 +36,6 @@
 
 .tile_figure {
   height: 150px;
-
   position: relative;
   z-index: 1;
   width: 241px;
@@ -68,5 +78,10 @@
 
   .tile {
     flex-basis: 33%;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .tile > img {
+    border-radius: 5px 5px 0 0;
   }
 }

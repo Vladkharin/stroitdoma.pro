@@ -3,6 +3,7 @@ import { Information } from "./mainPageComponents/information/Information";
 import { useEffect } from "react";
 import { IconsFixed } from "./mainPageComponents/iconsFixed/IconsFixed";
 import { Choose } from "./mainPageComponents/Choose/Choose";
+import { Catalog } from "./mainPageComponents/Catalog/Catalog";
 
 export function MainPage() {
   useEffect(() => {
@@ -16,6 +17,7 @@ export function MainPage() {
       <IconsFixed />
       <Information />
       <Choose />
+      <Catalog />
     </>
   );
 }
