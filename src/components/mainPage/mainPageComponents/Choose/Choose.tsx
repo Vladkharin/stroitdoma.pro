@@ -9,25 +9,19 @@ export function Choose() {
           <div className={styles.tile_figure}>
             <h3>Комплектация</h3>
             <p className={styles.text}>Можно выбрать вариант дома на любой бюджет и самому рассчитать финальную цену в калькуляторе.</p>
-            <img src={"./icons/Subtract.svg"} alt="Subtract" />
           </div>
-          <img src={"./img/choose1.png"} alt="" />
         </div>
         <div className={styles.tile}>
           <div className={styles.tile_figure}>
             <h3>Строим 8 лет</h3>
             <p className={styles.text}>Опытные бригады, собственная проверенная технология, лучшие материалы и подрядчики.</p>
-            <img src={"./icons/Subtract.svg"} alt="Subtract" />
           </div>
-          <img src={"./img/choose3.JPG"} alt="" />
         </div>
         <div className={styles.tile}>
           <div className={styles.tile_figure}>
             <h3>Под ключ в 1 ипотеку</h3>
             <p className={styles.text}>Участок и дом со всей отделкой и коммуникациями можно заказать в 1 ипотеку.</p>
-            <img src={"./icons/Subtract.svg"} alt="Subtract" />
           </div>
-          <img src={"./img/choose2.jpg"} alt="" />
         </div>
       </div>
     </section>

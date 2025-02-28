@@ -7,7 +7,7 @@
 .tile {
   height: 425px;
   width: auto;
-  background-color: grey;
+  background-color: var(--orange-color);
   padding: 20px 10px;
   border-radius: 5px;
   position: relative;
@@ -36,18 +36,18 @@
 
 .tile_figure {
   height: 150px;
-  position: relative;
   z-index: 1;
   width: 241px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .tile_figure > h3 {
-  display: inline;
-  background: gray;
   padding: 5px;
   border-radius: 7px;
+  font-size: 21px;
   color: white;
-  position: absolute;
   z-index: 2;
   margin: 0;
   top: 30px;
@@ -55,20 +55,12 @@
 }
 
 .tile_figure > p {
-  font-size: 13px;
+  font-size: 16px;
   color: white;
   top: 70px;
   left: 10px;
-  position: absolute;
   z-index: 1;
   margin: 0;
-}
-
-.tile_figure > img {
-  height: 100%;
-  width: auto;
-  position: absolute;
-  top: 0;
 }
 
 @media (min-width: 960px) {
@@ -78,10 +70,6 @@
 
   .tile {
     flex-basis: 33%;
-    border-radius: 5px 5px 0 0;
-  }
-
-  .tile > img {
     border-radius: 5px 5px 0 0;
   }
 }

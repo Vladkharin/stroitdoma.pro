@@ -31,7 +31,7 @@
   color: white;
   font-size: 14px;
   line-height: 1.55;
-  font-weight: 600;
+  font-weight: 400;
   border-width: 1px;
   border-radius: 4px 4px 4px 4px;
   background-color: var(--orange-color);
@@ -50,9 +50,19 @@
   .wrapper {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 40px;
   }
 
   .tile {
     flex-basis: 45%;
+  }
+
+  .tile > a {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+
+  .tile > img {
+    height: 400px;
   }
 }

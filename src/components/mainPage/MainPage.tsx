@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { IconsFixed } from "./mainPageComponents/iconsFixed/IconsFixed";
 import { Choose } from "./mainPageComponents/Choose/Choose";
 import { Catalog } from "./mainPageComponents/Catalog/Catalog";
+import { BuiltHouses } from "./mainPageComponents/builtHouses/builtHouses";
+import { Record } from "./mainPageComponents/record/Record";
 
 export function MainPage() {
   useEffect(() => {
@@ -18,6 +20,8 @@ export function MainPage() {
       <Information />
       <Choose />
       <Catalog />
+      <BuiltHouses />
+      <Record />
     </>
   );
 }
