@@ -12,7 +12,9 @@ export function PlotHouse() {
           </div>
         </div>
 
-        <img className={styles.img} src={"./img/PoltHouse1.jpg"} alt="" />
+        <div className={styles.img_wrap}>
+          <img className={styles.img} src={"./img/PoltHouse1.jpg"} alt="" />
+        </div>
       </div>
     </section>
   );
