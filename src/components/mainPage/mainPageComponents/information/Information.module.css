@@ -106,6 +106,7 @@
   .information_text {
     height: auto;
     flex-basis: 60%;
+    padding-top: 100px;
   }
 
   .information {
