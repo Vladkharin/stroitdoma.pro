@@ -62,7 +62,9 @@ export function Record() {
           </div>
         </div>
 
-        <img className={styles.img} src={"./img/record1.jpg"} alt="" />
+        <div className={styles.img_wrap}>
+          <img className={styles.img} src={"./img/record1.jpg"} alt="" />
+        </div>
       </div>
     </section>
   );
