@@ -25,28 +25,25 @@ export function BuiltHouses() {
           loop={true}
         >
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/1.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1.JPG"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/2.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built2.JPG"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/3.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built3.JPG"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/4.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built4.JPG"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/5.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built5.PNG"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/6.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built6.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/7.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/8.webp"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built7.jpg"} alt="" />
           </SwiperSlide>
         </Swiper>
       </div>

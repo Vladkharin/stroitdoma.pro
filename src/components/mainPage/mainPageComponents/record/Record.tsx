@@ -1,10 +1,5 @@
 import styles from "./Record.module.css";
-import { Pagination, Autoplay, Parallax } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/parallax";
-import "swiper/css/autoplay";
+
 import { MaskedInput, createDefaultMaskGenerator } from "react-hook-mask";
 import { useState } from "react";
 
@@ -13,12 +8,12 @@ const maskGenerator = createDefaultMaskGenerator("+7 (999) 999-99-99");
 export function Record() {
   const [inputPhoneValue, setInputPhoneValue] = useState<string>("");
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [fetchStatus, setFetchStatus] = useState<string>("");
+  // const [fetchStatus, setFetchStatus] = useState<string>("");
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [inputsError, setInputsError] = useState<{ inputName: string; inputPhone: string }>({
-    inputName: "",
-    inputPhone: "",
-  });
+  // const [inputsError, setInputsError] = useState<{ inputName: string; inputPhone: string }>({
+  //   inputName: "",
+  //   inputPhone: "",
+  // });
 
   return (
     <section className={styles.section}>
@@ -35,13 +30,13 @@ export function Record() {
                 type="text"
                 placeholder={"Ваше имя"}
                 name={"user_name"}
-                onChange={() => {
-                  setInputsError({
-                    inputName: "",
-                    inputPhone: "",
-                  });
-                  setFetchStatus("");
-                }}
+                // onChange={() => {
+                //   setInputsError({
+                //     inputName: "",
+                //     inputPhone: "",
+                //   });
+                //   setFetchStatus("");
+                // }}
               />
               <MaskedInput
                 className={styles.input}
@@ -52,11 +47,11 @@ export function Record() {
                 value={inputPhoneValue}
                 onChange={() => {
                   setInputPhoneValue;
-                  setInputsError({
-                    inputName: "",
-                    inputPhone: "",
-                  });
-                  setFetchStatus("");
+                  //   setInputsError({
+                  //     inputName: "",
+                  //     inputPhone: "",
+                  //   });
+                  //   setFetchStatus("");
                 }}
               />
 
@@ -66,41 +61,8 @@ export function Record() {
             </form>
           </div>
         </div>
-        <Swiper
-          className={styles.swiper}
-          spaceBetween={10}
-          slidesPerView={1}
-          modules={[Pagination, Autoplay, Parallax]}
-          pagination={{ clickable: true, type: "bullets" }}
-          autoplay={{ delay: 5000 }}
-          parallax={true}
-          loop={true}
-        >
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/1.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/2.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/3.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/4.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/5.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/6.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/7.webp"} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/8.webp"} alt="" />
-          </SwiperSlide>
-        </Swiper>
+
+        <img className={styles.img} src={"./img/record1.jpg"} alt="" />
       </div>
     </section>
   );

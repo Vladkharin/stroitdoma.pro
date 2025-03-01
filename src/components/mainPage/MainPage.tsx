@@ -6,6 +6,8 @@ import { Choose } from "./mainPageComponents/Choose/Choose";
 import { Catalog } from "./mainPageComponents/Catalog/Catalog";
 import { BuiltHouses } from "./mainPageComponents/builtHouses/builtHouses";
 import { Record } from "./mainPageComponents/record/Record";
+import { PlotHouse } from "./mainPageComponents/plotHouse/PlotHouse";
+import { Footer } from "../footer/Footer";
 
 export function MainPage() {
   useEffect(() => {
@@ -22,6 +24,8 @@ export function MainPage() {
       <Catalog />
       <BuiltHouses />
       <Record />
+      <PlotHouse />
+      <Footer />
     </>
   );
 }
