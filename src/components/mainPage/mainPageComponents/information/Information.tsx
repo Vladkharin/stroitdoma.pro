@@ -18,7 +18,8 @@ export function Information() {
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
             <div className={styles.text}>
-              СТРОИТ - <br /> компания честно строит каркасные дома в Москве и Подмосковье
+              СТРОИТ - <br /> компания честно строит каркасные дома <br className={styles.br} /> в Москве <br className={styles.br} /> и
+              Подмосковье
             </div>
             <button className={styles.button} onClick={() => console.log(1)}>
               Каталог

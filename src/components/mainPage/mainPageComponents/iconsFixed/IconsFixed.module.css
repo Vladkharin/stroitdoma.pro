@@ -44,7 +44,7 @@
 @media (min-width: 960px) {
   .side_inscription {
     height: 50px;
-    left: calc(95% - 25px);
+    left: calc(95% - 40px);
     right: 0;
     width: 120px;
     display: flex;
@@ -56,7 +56,7 @@
 
   .icons {
     flex-direction: column;
-    left: calc(95% - 10px);
+    left: calc(95% - 40px);
     right: 0;
   }
 

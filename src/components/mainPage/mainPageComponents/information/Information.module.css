@@ -34,7 +34,7 @@
   background-color: var(--grey-color);
   display: flex;
   flex-direction: column;
-  font-size: 45px;
+  font-size: 38px;
   line-height: 1;
   letter-spacing: -1px;
   border-radius: 5px;
@@ -93,6 +93,12 @@
   color: #ffffff;
 }
 
+@media (min-width: 480px) {
+  .br {
+    display: none;
+  }
+}
+
 @media (min-width: 960px) {
   .information {
     height: auto;
@@ -131,5 +137,12 @@
 
   .information_mission > h2 {
     font-size: 14px;
+  }
+
+  .button {
+    width: 200px;
+    height: auto;
+    font-size: 26px;
+    padding: 10px;
   }
 }
