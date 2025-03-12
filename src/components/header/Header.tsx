@@ -46,10 +46,10 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
               <p>Адрес</p>
               <a href="">г. Подольск, Февральская ул., д. 57с1, оф. 107</a>
               <div className={styles.icons}>
-                <a href="https://t.me/+79197843396">
+                <a href="https://t.me/+79300358074">
                   <img src={"./icons/TelegramIcon.svg"} alt="" />
                 </a>
-                <a href="https://wa.me/79197843396">
+                <a href="https://wa.me/79300358074">
                   <img src={"./icons/WhatsappIcon.svg"} alt="" />
                 </a>
               </div>

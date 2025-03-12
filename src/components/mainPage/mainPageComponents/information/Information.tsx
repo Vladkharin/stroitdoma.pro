@@ -36,28 +36,16 @@ export function Information() {
             loop={true}
           >
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/1.webp"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/1.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/2.webp"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/2.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/3.webp"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/3.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/4.webp"} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/5.webp"} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/6.webp"} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/7.webp"} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/8.webp"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/4.jpg"} alt="" />
             </SwiperSlide>
           </Swiper>
         </div>

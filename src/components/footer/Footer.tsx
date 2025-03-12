@@ -122,11 +122,11 @@ export function Footer() {
               <br /> <br />
               Мессенджеры: <br />
               <br />{" "}
-              <a className={styles.link} href={"https://wa.me/79197843396"}>
+              <a className={styles.link} href={"https://wa.me/79300358074"}>
                 Whatsapp
               </a>{" "}
               <br />{" "}
-              <a className={styles.link} href={"https://t.me/+79197843396"}>
+              <a className={styles.link} href={"https://t.me/+79300358074"}>
                 Telegram
               </a>{" "}
               <br /> <br /> Адрес офиса: <br /> <br /> г. Подольск, Февральская ул., д. 57с1, оф. 107

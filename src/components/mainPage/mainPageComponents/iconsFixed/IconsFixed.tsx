@@ -6,8 +6,8 @@ type ICONS = {
 };
 
 const icons: ICONS[] = [
-  { name: "TelegramIcon.svg", link: "https://t.me/+79197843396" },
-  { name: "WhatsappIcon.svg", link: "https://wa.me/79197843396" },
+  { name: "TelegramIcon.svg", link: "https://t.me/+79300358074" },
+  { name: "WhatsappIcon.svg", link: "https://wa.me/79300358074" },
 ];
 
 export function IconsFixed() {
