@@ -8,19 +8,32 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
+import { H1 } from "../../../titles/H1";
+import { useEffect, useState } from "react";
+import { H2 } from "../../../titles/H2";
+import { H3 } from "../../../titles/H3";
 
 // const photos = ["1.webp", "2.webp", "3.webp", "4.webp", "5.webp", "6.webp", "7.webp", "8.webp"];
 
 export function Information() {
+  const [picturePosition, setPicturePosition] = useState("vert");
+
+  useEffect(() => {
+    const width = window.innerWidth;
+
+    if (width > 480 && width < 961) {
+      setPicturePosition("gor");
+    } else {
+      setPicturePosition("vert");
+    }
+  }, []);
+
   return (
     <section className={styles.information}>
       <div className={styles.information_wrapper}>
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
-            <div className={styles.text}>
-              СТРОИТ - <br /> компания честно строит каркасные дома <br className={styles.br} /> в Москве <br className={styles.br} /> и
-              Подмосковье
-            </div>
+            <H1 />
             <button className={styles.button} onClick={() => console.log(1)}>
               Каталог
             </button>
@@ -36,22 +49,42 @@ export function Information() {
             loop={true}
           >
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/1.jpg"} alt="" />
+              <img
+                className={styles.img}
+                style={{ width: "100%", height: "100%" }}
+                src={`./img/1_${picturePosition}.jpg`}
+                alt="information"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/2.jpg"} alt="" />
+              <img
+                className={styles.img}
+                style={{ width: "100%", height: "100%" }}
+                src={`./img/2_${picturePosition}.jpg`}
+                alt="information"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/3.jpg"} alt="" />
+              <img
+                className={styles.img}
+                style={{ width: "100%", height: "100%" }}
+                src={`./img/3_${picturePosition}.jpg`}
+                alt="information"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/4.jpg"} alt="" />
+              <img
+                className={styles.img}
+                style={{ width: "100%", height: "100%" }}
+                src={`./img/4_${picturePosition}.jpg`}
+                alt="information"
+              />
             </SwiperSlide>
           </Swiper>
         </div>
         <div className={styles.information_mission}>
-          <h2>Миссия</h2>
-          <p>Наша компания СТРОИТ дома. Честно, надежно, как себе. Свой дом - это просто и доступно каждому.</p>
+          <H2 text={"Миссия"} size={"small"} />
+          <H3 texts={["Наша компания СТРОИТ дома.", " Честно, надежно, как себе.", "Свой дом - это просто и доступно каждому."]} />
         </div>
       </div>
     </section>
