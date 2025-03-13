@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
 import { H1, H2, H3 } from "../../../titles/Titles";
+import { MediumButton } from "../../../buttons/Buttons";
 import { useEffect, useState } from "react";
 
 // const photos = ["1.webp", "2.webp", "3.webp", "4.webp", "5.webp", "6.webp", "7.webp", "8.webp"];
@@ -32,9 +33,7 @@ export function Information() {
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
             <H1 text={"СТРОИТ - компания честно строит каркасные дома в Москве и Подмосковье"} />
-            <button className={styles.button} onClick={() => console.log(1)}>
-              Каталог
-            </button>
+            <MediumButton text={"Каталог"} link={"#"} />
           </div>
           <Swiper
             className={styles.swiper}
