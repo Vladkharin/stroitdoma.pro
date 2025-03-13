@@ -1,9 +1,10 @@
+import { H2 } from "../../../titles/Titles";
 import styles from "./Choose.module.css";
 
 export function Choose() {
   return (
     <section className={styles.section}>
-      <h2>Почему выбирают строить со СТРОИТ?</h2>
+      <H2 text={"Почему выбирают строить со СТРОИТ?"} size="big" />
       <div className={styles.wrapper}>
         <div className={styles.tile}>
           <div className={styles.tile_figure}>

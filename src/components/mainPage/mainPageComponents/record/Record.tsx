@@ -2,6 +2,7 @@ import styles from "./Record.module.css";
 
 import { MaskedInput, createDefaultMaskGenerator } from "react-hook-mask";
 import { useState } from "react";
+import { H1, H4 } from "../../../titles/Titles";
 
 const maskGenerator = createDefaultMaskGenerator("+7 (999) 999-99-99");
 
@@ -19,11 +20,10 @@ export function Record() {
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
-          <div className={styles.text}>Запись на экскурсию</div>
+          <H1 text={"Запись на экскурсию"} />
           <div className={styles.wrapper}>
-            <div className={styles.subtitle}>
-              Посмотрите, как мы строим, прежде чем заключать договор. Каждые выходные показываем клиентам стройку.
-            </div>
+            <H4 text={"Посмотрите, как мы строим, прежде чем заключать договор. Каждые выходные показываем клиентам стройку."} />
+
             <form className={styles.form}>
               <input
                 className={styles.input}

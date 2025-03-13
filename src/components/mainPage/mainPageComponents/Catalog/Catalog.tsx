@@ -1,9 +1,10 @@
+import { H2 } from "../../../titles/Titles";
 import styles from "./Catalog.module.css";
 
 export function Catalog() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Линейки домов </h2>
+      <H2 text={"Линейки домов"} size="big" />
       <div className={styles.wrapper}>
         <div className={styles.tile}>
           <img src={"./img/catalog_1.jpg"} alt="" />

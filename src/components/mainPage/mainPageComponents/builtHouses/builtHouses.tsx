@@ -5,13 +5,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
+import { H1 } from "../../../titles/Titles";
 
 export function BuiltHouses() {
   return (
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
-          <div className={styles.text}>Дома, которые мы построили для наших клиентов</div>
+          <H1 text={"Дома, которые мы построили для наших клиентов"} />
           <button className={styles.button}>Смотреть больше</button>
         </div>
         <Swiper

@@ -54,7 +54,6 @@
   flex-direction: column;
   font-size: 45px;
   line-height: 1;
-  letter-spacing: -1px;
   border-radius: 5px;
   padding: 40px 30px 30px 30px;
   justify-content: space-between;
@@ -91,6 +90,8 @@
   display: flex;
   gap: 20px;
   flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 @media (min-width: 960px) {
@@ -123,9 +124,5 @@
 
   .wrapper {
     flex-direction: row;
-  }
-
-  .subtitle {
-    font-size: 25px;
   }
 }
