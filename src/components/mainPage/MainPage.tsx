@@ -9,7 +9,7 @@ import { Record } from "./mainPageComponents/record/Record";
 import { PlotHouse } from "./mainPageComponents/plotHouse/PlotHouse";
 import { Footer } from "../footer/Footer";
 
-export function MainPage() {
+export function MainPage({ positionImg }: { positionImg: string }) {
   useEffect(() => {
     const y = window.scrollY;
     window.scrollBy(0, -y);
@@ -19,7 +19,7 @@ export function MainPage() {
   return (
     <>
       <IconsFixed />
-      <Information />
+      <Information positionImg={positionImg} />
       <Choose />
       <Catalog />
       <BuiltHouses />

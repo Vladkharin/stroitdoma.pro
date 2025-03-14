@@ -7,21 +7,8 @@ import "swiper/css/parallax";
 import "swiper/css/autoplay";
 import { H1, H2, H3 } from "../../../titles/Titles";
 import { MediumButton } from "../../../buttons/Buttons";
-import { useEffect, useState } from "react";
 
-export function Information() {
-  const [picturePosition, setPicturePosition] = useState("vert");
-
-  useEffect(() => {
-    const width = window.innerWidth;
-
-    if (width > 480 && width < 961) {
-      setPicturePosition("gor");
-    } else {
-      setPicturePosition("vert");
-    }
-  }, []);
-
+export function Information({ positionImg }: { positionImg: string }) {
   return (
     <section className={styles.information}>
       <div className={styles.information_wrapper}>
@@ -41,36 +28,16 @@ export function Information() {
             loop={true}
           >
             <SwiperSlide>
-              <img
-                className={styles.img}
-                style={{ width: "100%", height: "100%" }}
-                src={`./img/1_${picturePosition}.jpg`}
-                alt="information"
-              />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/1_${positionImg}.jpg`} alt="information" />
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                className={styles.img}
-                style={{ width: "100%", height: "100%" }}
-                src={`./img/2_${picturePosition}.jpg`}
-                alt="information"
-              />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/2_${positionImg}.jpg`} alt="information" />
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                className={styles.img}
-                style={{ width: "100%", height: "100%" }}
-                src={`./img/3_${picturePosition}.jpg`}
-                alt="information"
-              />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/3_${positionImg}.jpg`} alt="information" />
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                className={styles.img}
-                style={{ width: "100%", height: "100%" }}
-                src={`./img/4_${picturePosition}.jpg`}
-                alt="information"
-              />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/4_${positionImg}.jpg`} alt="information" />
             </SwiperSlide>
           </Swiper>
         </div>

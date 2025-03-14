@@ -12,6 +12,18 @@ function App() {
   // const [mainPage] = useState("/");
   const [bodyStyle, setBodyStyle] = useState("");
 
+  const [picturePosition, setPicturePosition] = useState("vert");
+
+  useEffect(() => {
+    const width = window.innerWidth;
+
+    if (width > 480 && width < 961) {
+      setPicturePosition("gor");
+    } else {
+      setPicturePosition("vert");
+    }
+  }, []);
+
   // const handleScroll = () => {
   //   setScroll(window.scrollY);
   // };
@@ -29,7 +41,7 @@ function App() {
     <Router>
       <Header setBodyStyle={setBodyStyle} />
       <Routes>
-        <Route path={"/:anchor?"} element={<MainPage />} />
+        <Route path={"/:anchor?"} element={<MainPage positionImg={picturePosition} />} />
         <Route path={"/payment"} element={<PaymentPage />} />
       </Routes>
     </Router>
