@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
 import { H1 } from "../../../titles/Titles";
+import { MediumButton } from "../../../buttons/Buttons";
 
 export function BuiltHouses() {
   return (
@@ -13,7 +14,7 @@ export function BuiltHouses() {
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
           <H1 text={"Дома, которые мы построили для наших клиентов"} />
-          <button className={styles.button}>Смотреть больше</button>
+          <MediumButton text={"Смотреть больше"} link={"#"} />
         </div>
         <Swiper
           className={styles.swiper}

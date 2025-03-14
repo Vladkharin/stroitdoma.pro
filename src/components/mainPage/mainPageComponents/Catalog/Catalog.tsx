@@ -1,3 +1,4 @@
+import { MediumButton } from "../../../buttons/Buttons";
 import { H2 } from "../../../titles/Titles";
 import styles from "./Catalog.module.css";
 
@@ -9,17 +10,17 @@ export function Catalog() {
         <div className={styles.tile}>
           <img src={"./img/catalog_1.jpg"} alt="" />
           <p className={styles.name}>1 этаж</p>
-          <a>Зайти</a>
+          <MediumButton text={"Зайти"} link={"#"} />
         </div>
         <div className={styles.tile}>
           <img src={"./img/catalog_2.jpg"} alt="" />
           <p className={styles.name}>2 этажа</p>
-          <a>Зайти</a>
+          <MediumButton text={"Зайти"} link={"#"} />
         </div>
         <div className={styles.tile}>
           <img src={"./img/catalog_3.jpg"} alt="" />
           <p className={styles.name}>Бани</p>
-          <a>Зайти</a>
+          <MediumButton text={"Зайти"} link={"#"} />
         </div>
       </div>
     </section>

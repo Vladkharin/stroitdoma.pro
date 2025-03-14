@@ -1,6 +1,3 @@
-// import React, { useState } from "react";
-// import { FormModal } from "./formModal/FormModal";
-// import React from "react";
 import { Pagination, Autoplay, Parallax } from "swiper/modules";
 import styles from "./Information.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,8 +8,6 @@ import "swiper/css/autoplay";
 import { H1, H2, H3 } from "../../../titles/Titles";
 import { MediumButton } from "../../../buttons/Buttons";
 import { useEffect, useState } from "react";
-
-// const photos = ["1.webp", "2.webp", "3.webp", "4.webp", "5.webp", "6.webp", "7.webp", "8.webp"];
 
 export function Information() {
   const [picturePosition, setPicturePosition] = useState("vert");
