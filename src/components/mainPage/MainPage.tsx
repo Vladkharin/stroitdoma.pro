@@ -8,8 +8,15 @@ import { BuiltHouses } from "./mainPageComponents/builtHouses/builtHouses";
 import { Record } from "./mainPageComponents/record/Record";
 import { PlotHouse } from "./mainPageComponents/plotHouse/PlotHouse";
 import { Footer } from "../footer/Footer";
+import { typeChoiceTypeHouse } from "../catalogPage/CatalogPage";
 
-export function MainPage({ positionImg }: { positionImg: string }) {
+export function MainPage({
+  positionImg,
+  setActiveTab,
+}: {
+  positionImg: string;
+  setActiveTab: React.Dispatch<React.SetStateAction<typeChoiceTypeHouse>>;
+}) {
   useEffect(() => {
     const y = window.scrollY;
     window.scrollBy(0, -y);
@@ -21,10 +28,10 @@ export function MainPage({ positionImg }: { positionImg: string }) {
       <IconsFixed />
       <Information positionImg={positionImg} />
       <Choose />
-      <Catalog />
+      <Catalog setActiveTab={setActiveTab} />
       <BuiltHouses />
-      <Record />
-      <PlotHouse />
+      <Record positionImg={positionImg} />
+      <PlotHouse positionImg={positionImg} />
       <Footer />
     </>
   );

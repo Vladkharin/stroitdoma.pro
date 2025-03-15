@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { PaymentPage } from "./components/paymentPage/PaymentPage";
+import { CatalogPage, typeChoiceTypeHouse } from "./components/catalogPage/CatalogPage";
 
 function App() {
   // const [scroll, setScroll] = useState(0);
@@ -13,6 +14,8 @@ function App() {
   const [bodyStyle, setBodyStyle] = useState("");
 
   const [picturePosition, setPicturePosition] = useState("vert");
+
+  const [activeTab, setActiveTab] = useState<typeChoiceTypeHouse>({ type: "all" });
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -41,7 +44,8 @@ function App() {
     <Router>
       <Header setBodyStyle={setBodyStyle} />
       <Routes>
-        <Route path={"/:anchor?"} element={<MainPage positionImg={picturePosition} />} />
+        <Route path={"/:anchor?"} element={<MainPage positionImg={picturePosition} setActiveTab={setActiveTab} />} />
+        <Route path={"/catalog"} element={<CatalogPage setActiveTab={setActiveTab} activeTab={activeTab} />}></Route>
         <Route path={"/payment"} element={<PaymentPage />} />
       </Routes>
     </Router>

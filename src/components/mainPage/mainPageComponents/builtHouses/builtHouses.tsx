@@ -14,7 +14,7 @@ export function BuiltHouses() {
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
           <H1 text={"Дома, которые мы построили для наших клиентов"} />
-          <MediumButton text={"Смотреть больше"} link={"#"} />
+          <MediumButton text={"Смотреть больше"} link={"#"} zoom={1} />
         </div>
         <Swiper
           className={styles.swiper}
@@ -27,19 +27,19 @@ export function BuiltHouses() {
           loop={true}
         >
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1.JPG"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built2.JPG"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built2.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built3.JPG"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built3.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built4.JPG"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built4.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built5.PNG"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built5.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
             <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built6.jpg"} alt="" />

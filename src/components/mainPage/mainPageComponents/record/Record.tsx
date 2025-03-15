@@ -6,7 +6,7 @@ import { H1, H4 } from "../../../titles/Titles";
 
 const maskGenerator = createDefaultMaskGenerator("+7 (999) 999-99-99");
 
-export function Record() {
+export function Record({ positionImg }: { positionImg: string }) {
   const [inputPhoneValue, setInputPhoneValue] = useState<string>("");
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // const [fetchStatus, setFetchStatus] = useState<string>("");
@@ -22,7 +22,7 @@ export function Record() {
         <div className={styles.block_text}>
           <H1 text={"Запись на экскурсию"} />
           <div className={styles.wrapper}>
-            <H4 text={"Посмотрите, как мы строим, прежде чем заключать договор. Каждые выходные показываем клиентам стройку."} />
+            <H4 texts={["Посмотрите, как мы строим,", "прежде чем заключать договор.", "Каждые выходные показываем клиентам стройку."]} />
 
             <form className={styles.form}>
               <input
@@ -63,7 +63,7 @@ export function Record() {
         </div>
 
         <div className={styles.img_wrap}>
-          <img className={styles.img} src={"./img/1200х2000 1.jpg"} alt="" />
+          <img className={styles.img} src={`./img/record_${positionImg}.jpg`} alt="" />
         </div>
       </div>
     </section>

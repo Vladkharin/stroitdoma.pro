@@ -21,25 +21,6 @@
   border-radius: 5px;
 }
 
-.tile > a {
-  color: white;
-  font-size: 14px;
-  line-height: 1.55;
-  font-weight: 400;
-  border-width: 1px;
-  border-radius: 4px 4px 4px 4px;
-  background-color: var(--orange-color);
-  background-position: center center;
-  border-color: var(--orange-color);
-  border-style: solid;
-  padding: 5px 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: white;
-    color: var(--orange-color);
-  }
-}
-
 @media (min-width: 960px) {
   .wrapper {
     flex-direction: row;
@@ -49,11 +30,6 @@
 
   .tile {
     flex-basis: 45%;
-  }
-
-  .tile > a {
-    padding: 10px 30px;
-    font-size: 16px;
   }
 
   .tile > img {

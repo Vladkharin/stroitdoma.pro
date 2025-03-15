@@ -21,6 +21,15 @@ export function H3({ texts }: { texts: string[] }) {
   );
 }
 
-export function H4({ text }: { text: string }) {
-  return <h4 className={styles.h4}>{text}</h4>;
+export function H4({ texts }: { texts: string[] }) {
+  return (
+    <h4 className={styles.h4}>
+      {texts.map((text) => (
+        <>
+          {text}
+          <br />
+        </>
+      ))}
+    </h4>
+  );
 }
