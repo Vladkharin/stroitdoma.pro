@@ -36,9 +36,9 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
             <div className={styles.links}>
               <Link to={"/catalog"}>Каталог</Link>
               <Link to={"/built_houses"}>Построенные дома</Link>
-              <a href="">Экскурсия</a>
-              <a href="">Участок</a>
-              <a href="">Контакты</a>
+              <Link to={"/stub"}>Экскурсия</Link>
+              <Link to={"/stub"}>Участок</Link>
+              <Link to={"/stub"}>Контакты</Link>
             </div>
             <div className={styles.texts}>
               <p>Телефоны</p>
@@ -62,9 +62,9 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
       <header className={styles.header_desc}>
         <Link to={"/catalog"}>Каталог</Link>
         <Link to={"/built_houses"}>Построенные дома</Link>
-        <a href="">Экскурсия</a>
-        <a href="">Участок</a>
-        <a href="">Контакты</a>
+        <Link to={"/stub"}>Экскурсия</Link>
+        <Link to={"/stub"}>Участок</Link>
+        <Link to={"/stub"}>Контакты</Link>
       </header>
     </>
   );

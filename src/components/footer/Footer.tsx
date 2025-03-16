@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -6,18 +7,18 @@ export function Footer() {
       <div className={styles.wrapper_mob}>
         <div className={styles.item}>
           <h3 className={styles.title}>Разделы</h3>
-          <a className={styles.link} href="#">
+          <Link className={styles.link} to={"/catalog"}>
             Каталог
-          </a>
-          <a className={styles.link} href="#">
+          </Link>
+          <Link className={styles.link} to={"built_houses"}>
             Построенные дома
-          </a>
-          <a className={styles.link} href="#">
+          </Link>
+          <Link className={styles.link} to={"/stub"}>
             Новости
-          </a>
-          <a className={styles.link} href="#">
+          </Link>
+          <Link className={styles.link} to={"/stub"}>
             Технология
-          </a>
+          </Link>
         </div>
 
         <div className={styles.line}></div>

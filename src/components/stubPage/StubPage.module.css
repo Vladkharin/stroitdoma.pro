@@ -1,0 +1,9 @@
+.text {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-color);
+  font-size: 25px;
+}

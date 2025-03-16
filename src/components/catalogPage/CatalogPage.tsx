@@ -85,41 +85,39 @@ export function CatalogPage({
 
   return (
     <div id="catalog" className={styles.catalog}>
-      <div className={`container ${window.innerWidth < 481 ? styles.container_enlargement : ""}`}>
-        <div className={styles.wrapper}>
-          <div className={styles.header}>Каталог</div>
-          <div className={styles.menu_wrapper}>
-            <button
-              className={`${styles.text} ${choiceTypeHouse.type === "all" ? styles.change_bg : ""}`}
-              data-modal="all"
-              onClick={() => setActiveTab({ type: "all" })}
-            >
-              Весь каталог
-            </button>
-            <button
-              className={`${styles.text} ${choiceTypeHouse.type === "cottage" ? styles.change_bg : ""}`}
-              data-modal="cottage"
-              onClick={() => setActiveTab({ type: "cottage" })}
-            >
-              1 этаж. дома
-            </button>
-            <button
-              className={`${styles.text} ${choiceTypeHouse.type === "two-storey house" ? styles.change_bg : ""}`}
-              data-modal="two-storey house"
-              onClick={() => setActiveTab({ type: "two-storey house" })}
-            >
-              2 этаж. дома
-            </button>
-            <button
-              className={`${styles.text} ${choiceTypeHouse.type === "bathhouse" ? styles.change_bg : ""}`}
-              data-modal="bathhouse"
-              onClick={() => setActiveTab({ type: "bathhouse" })}
-            >
-              Бани
-            </button>
-          </div>
-          <ThirdBlockTiles />
+      <div className={styles.wrapper}>
+        <div className={styles.header}>Каталог</div>
+        <div className={styles.menu_wrapper}>
+          <button
+            className={`${styles.text} ${choiceTypeHouse.type === "all" ? styles.change_bg : ""}`}
+            data-modal="all"
+            onClick={() => setActiveTab({ type: "all" })}
+          >
+            Весь каталог
+          </button>
+          <button
+            className={`${styles.text} ${choiceTypeHouse.type === "cottage" ? styles.change_bg : ""}`}
+            data-modal="cottage"
+            onClick={() => setActiveTab({ type: "cottage" })}
+          >
+            1 этаж. дома
+          </button>
+          <button
+            className={`${styles.text} ${choiceTypeHouse.type === "two-storey house" ? styles.change_bg : ""}`}
+            data-modal="two-storey house"
+            onClick={() => setActiveTab({ type: "two-storey house" })}
+          >
+            2 этаж. дома
+          </button>
+          <button
+            className={`${styles.text} ${choiceTypeHouse.type === "bathhouse" ? styles.change_bg : ""}`}
+            data-modal="bathhouse"
+            onClick={() => setActiveTab({ type: "bathhouse" })}
+          >
+            Бани
+          </button>
         </div>
+        <ThirdBlockTiles />
       </div>
       <IconsFixed path={"."} />
     </div>
