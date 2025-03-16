@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import styles from "./CatalogPage.module.css";
 
 import { fetchAdditionalServices, getActiveTypeHouses, stringConversion } from "./CatalogPage.services";
+import { IconsFixed } from "../iconsFixed/IconsFixed";
 
 export type typeAdditionalServices = {
   ДатаФормирования: string;
@@ -120,6 +121,7 @@ export function CatalogPage({
           <ThirdBlockTiles />
         </div>
       </div>
+      <IconsFixed path={"."} />
     </div>
   );
 }
@@ -142,7 +144,7 @@ function ModalHouse(task: typeItemHouse) {
 
   return (
     <React.Fragment key={task.code}>
-      <Link to={`/houses/${task.link}`} state={{ task: task }} className={styles.tile}>
+      <Link to={`/catalog/${task.link}`} state={{ task: task }} className={styles.tile}>
         <img className={styles.tile_img} src={task.img} alt={task.alt} />
         <div className={styles.tile_text}>{task.information ? task.information[0] : false}</div>
         <div className={styles.tile_text}>{task.information ? task.information[1] : false}</div>
@@ -165,7 +167,7 @@ function ModalBathHouse(task: typeItemHouse) {
 
   return (
     <React.Fragment key={task.code}>
-      <Link to={`/houses/${task.link}`} state={{ task: task }} className={styles.tile}>
+      <Link to={`/catalog/${task.link}`} state={{ task: task }} className={styles.tile}>
         <img className={styles.tile_img} src={task.img} alt={task.alt} />
         <div className={styles.tile_text}>{task.information ? task.information[0] : false}</div>
         <div className={styles.tile_text}>{task.information ? task.information[1] : false}</div>

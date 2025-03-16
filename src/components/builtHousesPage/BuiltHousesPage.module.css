@@ -1,0 +1,154 @@
+.information {
+  height: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 65px 10px 0 10px;
+}
+.information_wrapper {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.text_and_swiper_wrapper {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.img {
+  border-radius: 5px;
+}
+
+.information_text {
+  height: 500px;
+  width: 100%;
+  background-color: var(--grey-color);
+  display: flex;
+  flex-direction: column;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -1px;
+  border-radius: 5px;
+  padding: 40px 10px 20px 10px;
+  justify-content: space-between;
+}
+
+.text {
+  height: auto;
+}
+
+.button {
+  font-family: "Inter";
+  font-weight: normal;
+  font-style: normal;
+  width: 140px;
+  height: 45px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--orange-color);
+  color: var(--white-color);
+  &:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);
+  }
+}
+
+.swiper {
+  height: 500px;
+  width: 100%;
+}
+
+.information_mission {
+  height: 500px;
+  width: 100%;
+  background-color: var(--orange-color);
+  border-radius: 5px;
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
+  font-weight: 400;
+}
+
+.information_mission > p {
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+
+.table_img {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .br {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .information {
+    height: auto;
+  }
+
+  .table {
+    grid-template-columns: repeat(4, 25%);
+  }
+
+  .text_and_swiper_wrapper {
+    flex-direction: row;
+    height: 98vh;
+  }
+
+  .information_text {
+    height: auto;
+    flex-basis: 60%;
+    padding-top: 100px;
+  }
+
+  .information {
+    padding: 10px 10px 0 10px;
+  }
+
+  .swiper {
+    height: 100%;
+    flex-basis: 40%;
+  }
+
+  .information_mission {
+    padding: 20px;
+    height: 98vh;
+  }
+
+  .information_mission > p {
+    font-size: 50px;
+    line-height: 50px;
+    width: 700px;
+  }
+
+  .button {
+    width: 200px;
+    height: auto;
+    font-size: 26px;
+    padding: 10px;
+  }
+}

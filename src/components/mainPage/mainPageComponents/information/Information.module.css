@@ -106,7 +106,6 @@
 
   .information_text {
     height: auto;
-    flex-basis: 60%;
     padding-top: 100px;
   }
 
@@ -116,7 +115,7 @@
 
   .swiper {
     height: 100%;
-    flex-basis: 40%;
+    width: 900px;
   }
 
   .information_mission {

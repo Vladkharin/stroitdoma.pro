@@ -2,6 +2,7 @@
 // import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.SetStateAction<string>> }) {
   const [navMenuState, setNavMenuState] = useState<boolean>(false);
@@ -33,8 +34,8 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
 
           <div className={styles.wrapper}>
             <div className={styles.links}>
-              <a href="">Каталог</a>
-              <a href="">Построенные дома</a>
+              <Link to={"/catalog"}>Каталог</Link>
+              <Link to={"/built_houses"}>Построенные дома</Link>
               <a href="">Экскурсия</a>
               <a href="">Участок</a>
               <a href="">Контакты</a>
@@ -59,8 +60,8 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
         <div className={styles.background} style={{ opacity: navMenuState ? "0.7" : "0", zIndex: navMenuState ? "15" : "-1" }}></div>
       </header>
       <header className={styles.header_desc}>
-        <a href="">Каталог</a>
-        <a href="">Построенные дома</a>
+        <Link to={"/catalog"}>Каталог</Link>
+        <Link to={"/built_houses"}>Построенные дома</Link>
         <a href="">Экскурсия</a>
         <a href="">Участок</a>
         <a href="">Контакты</a>

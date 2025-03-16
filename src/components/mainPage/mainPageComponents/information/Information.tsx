@@ -15,7 +15,7 @@ export function Information({ positionImg }: { positionImg: string }) {
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
             <H1 text={"СТРОИТ - компания честно строит каркасные дома в Москве и Подмосковье"} />
-            <MediumButton text={"Каталог"} link={"#"} zoom={1} />
+            <MediumButton text={"Каталог"} link={"/catalog"} zoom={1} />
           </div>
           <Swiper
             className={styles.swiper}

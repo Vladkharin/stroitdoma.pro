@@ -7,10 +7,11 @@
 
 * {
   box-sizing: border-box;
+  object-fit: cover;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   margin: 0;
   overflow-x: hidden;
 }
@@ -19,8 +20,39 @@ body {
   width: 0;
 }
 
+.container {
+  margin: 0 auto;
+  width: 310px;
+}
+
+@media (min-width: 481px) {
+  .container {
+    width: 460px;
+  }
+}
+
+@media (min-width: 481px) {
+  .container {
+    width: 460px;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    width: 620px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1160px;
+  }
+}
+
 @media (min-width: 960px) {
   #root {
     width: 95%;
+  }
+  .container {
+    width: 940px;
   }
 }

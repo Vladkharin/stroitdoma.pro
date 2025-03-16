@@ -1,7 +1,5 @@
 import { Information } from "./mainPageComponents/information/Information";
-
 import { useEffect } from "react";
-import { IconsFixed } from "./mainPageComponents/iconsFixed/IconsFixed";
 import { Choose } from "./mainPageComponents/Choose/Choose";
 import { Catalog } from "./mainPageComponents/Catalog/Catalog";
 import { BuiltHouses } from "./mainPageComponents/builtHouses/builtHouses";
@@ -9,6 +7,7 @@ import { Record } from "./mainPageComponents/record/Record";
 import { PlotHouse } from "./mainPageComponents/plotHouse/PlotHouse";
 import { Footer } from "../footer/Footer";
 import { typeChoiceTypeHouse } from "../catalogPage/CatalogPage";
+import { IconsFixed } from "../iconsFixed/IconsFixed";
 
 export function MainPage({
   positionImg,
@@ -25,7 +24,7 @@ export function MainPage({
 
   return (
     <>
-      <IconsFixed />
+      <IconsFixed path={"."} />
       <Information positionImg={positionImg} />
       <Choose />
       <Catalog setActiveTab={setActiveTab} />

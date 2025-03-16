@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { PaymentPage } from "./components/paymentPage/PaymentPage";
 import { CatalogPage, typeChoiceTypeHouse } from "./components/catalogPage/CatalogPage";
+import { BuiltHousesPage } from "./components/builtHousesPage/BuiltHousesPage";
+import { HousePage } from "./components/housePage/HousePage";
 
 function App() {
   // const [scroll, setScroll] = useState(0);
@@ -46,6 +48,8 @@ function App() {
       <Routes>
         <Route path={"/:anchor?"} element={<MainPage positionImg={picturePosition} setActiveTab={setActiveTab} />} />
         <Route path={"/catalog"} element={<CatalogPage setActiveTab={setActiveTab} activeTab={activeTab} />}></Route>
+        <Route path={"/built_houses"} element={<BuiltHousesPage positionImg={picturePosition} />} />
+        <Route path={"/catalog/:houseName?"} element={<HousePage />} />
         <Route path={"/payment"} element={<PaymentPage />} />
       </Routes>
     </Router>
