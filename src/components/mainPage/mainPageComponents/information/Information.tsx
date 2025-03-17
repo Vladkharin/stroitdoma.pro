@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
-import { H1, H2, H3 } from "../../../titles/Titles";
+import { H1WithBr, H2, H3 } from "../../../titles/Titles";
 import { MediumButton } from "../../../buttons/Buttons";
 
 export function Information({ positionImg }: { positionImg: string }) {
@@ -14,7 +14,7 @@ export function Information({ positionImg }: { positionImg: string }) {
       <div className={styles.information_wrapper}>
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
-            <H1 text={"СТРОИТ - компания честно строит каркасные дома в Москве и Подмосковье"} />
+            <H1WithBr />
             <MediumButton text={"Каталог"} link={"/catalog"} zoom={1} />
           </div>
           <Swiper

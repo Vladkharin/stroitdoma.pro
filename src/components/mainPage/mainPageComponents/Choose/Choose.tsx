@@ -9,7 +9,9 @@ export function Choose() {
         <div className={styles.tile}>
           <div className={styles.tile_figure}>
             <h3>Комплектация</h3>
-            <p className={styles.text}>Можно выбрать вариант дома на любой бюджет и самому рассчитать финальную цену в калькуляторе.</p>
+            <p className={styles.text}>
+              Можно выбрать вариант дома на любой бюджет и самому рассчитать финальную цену <br /> в калькуляторе.
+            </p>
           </div>
         </div>
         <div className={styles.tile}>
