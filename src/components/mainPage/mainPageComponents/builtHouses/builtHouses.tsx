@@ -57,7 +57,7 @@ export function BuiltHouses() {
             <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built10.jpg"} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1.jpg"} alt="" />
+            <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built11.jpg"} alt="" />
           </SwiperSlide>
         </Swiper>
       </div>
