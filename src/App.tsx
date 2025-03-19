@@ -10,6 +10,7 @@ import { CatalogPage, typeChoiceTypeHouse } from "./components/catalogPage/Catal
 import { BuiltHousesPage } from "./components/builtHousesPage/BuiltHousesPage";
 import { HousePage } from "./components/housePage/HousePage";
 import { StubPage } from "./components/stubPage/StubPage";
+import { Footer } from "./components/footer/Footer";
 
 function App() {
   // const [scroll, setScroll] = useState(0);
@@ -55,6 +56,7 @@ function App() {
         <Route path={"/stub"} element={<StubPage />} />
         <Route path={"/payment"} element={<PaymentPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

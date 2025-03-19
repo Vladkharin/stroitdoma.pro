@@ -87,8 +87,7 @@ export function Header({
               >
                 Участок
               </Link>
-              <Link
-                to={"/"}
+              <a
                 onClick={() => {
                   window.scrollTo({ behavior: "smooth", top: document.documentElement.scrollHeight });
                   setNavMenuState(false);
@@ -96,7 +95,7 @@ export function Header({
                 }}
               >
                 Контакты
-              </Link>
+              </a>
             </div>
             <div className={styles.texts}>
               <p>Телефоны</p>
