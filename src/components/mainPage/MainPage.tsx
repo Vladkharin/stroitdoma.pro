@@ -29,7 +29,7 @@ export function MainPage({
       <Choose />
       <Catalog setActiveTab={setActiveTab} />
       <BuiltHouses />
-      <Record positionImg={positionImg} />
+      <Record />
       <PlotHouse positionImg={positionImg} />
       <Footer />
     </>
