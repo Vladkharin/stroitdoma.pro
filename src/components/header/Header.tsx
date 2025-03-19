@@ -3,8 +3,15 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
+import { typeChoiceTypeHouse } from "../catalogPage/CatalogPage";
 
-export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.SetStateAction<string>> }) {
+export function Header({
+  setBodyStyle,
+  setActiveTab,
+}: {
+  setBodyStyle: React.Dispatch<React.SetStateAction<string>>;
+  setActiveTab: React.Dispatch<React.SetStateAction<typeChoiceTypeHouse>>;
+}) {
   const [navMenuState, setNavMenuState] = useState<boolean>(false);
 
   return (
@@ -34,7 +41,10 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
 
           <div className={styles.wrapper}>
             <div className={styles.links}>
-              <Link to={"/catalog"}>Каталог</Link>
+              <Link to={"/"}>Главная</Link>
+              <Link to={"/catalog"} onClick={() => setActiveTab({ type: "all" })}>
+                Каталог
+              </Link>
               <Link to={"/built_houses"}>Построенные дома</Link>
               <Link to={"/stub"}>Экскурсия</Link>
               <Link to={"/stub"}>Участок</Link>
@@ -42,8 +52,8 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
             </div>
             <div className={styles.texts}>
               <p>Телефоны</p>
-              <a href="">+7(495)374-74-77</a> <br /> <br />
-              <a href="">+7(919)784-33-96</a>
+              <a href="tel:+74953747477">+7(495)374-74-77</a> <br /> <br />
+              <a href="tel:+79197843396">+7(919)784-33-96</a>
               <p>Адрес</p>
               <a href="">г. Подольск, Февральская ул., д. 57с1, оф. 107</a>
               <div className={styles.icons}>
@@ -60,11 +70,21 @@ export function Header({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
         <div className={styles.background} style={{ opacity: navMenuState ? "0.7" : "0", zIndex: navMenuState ? "15" : "-1" }}></div>
       </header>
       <header className={styles.header_desc}>
-        <Link to={"/catalog"}>Каталог</Link>
+        <Link to={"/"}>Главная</Link>
+        <Link to={"/catalog"} onClick={() => setActiveTab({ type: "all" })}>
+          Каталог
+        </Link>
         <Link to={"/built_houses"}>Построенные дома</Link>
         <Link to={"/stub"}>Экскурсия</Link>
         <Link to={"/stub"}>Участок</Link>
-        <Link to={"/stub"}>Контакты</Link>
+        <a
+          style={{ cursor: "pointer", transition: "all 0.5s" }}
+          onClick={() => {
+            window.scrollTo({ behavior: "smooth", top: document.documentElement.scrollHeight });
+          }}
+        >
+          Контакты
+        </a>
       </header>
     </>
   );

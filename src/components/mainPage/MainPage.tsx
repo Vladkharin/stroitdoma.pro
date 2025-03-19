@@ -25,7 +25,7 @@ export function MainPage({
   return (
     <>
       <IconsFixed path={"."} />
-      <Information positionImg={positionImg} />
+      <Information />
       <Choose />
       <Catalog setActiveTab={setActiveTab} />
       <BuiltHouses />

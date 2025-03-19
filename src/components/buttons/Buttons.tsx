@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export function MediumButton({ link, text, zoom = 1 }: { link: string; text: string; zoom: number }) {
   return (
-    <Link to={link} className={styles.medium_button} style={{ zoom: zoom }}>
+    <Link to={link} className={styles.medium_button} style={{ zoom: zoom }} onClick={() => window.scrollTo(0, 0)}>
       {text}
     </Link>
   );
@@ -24,7 +24,15 @@ export function CatalogButton({
   setActiveTab: React.Dispatch<React.SetStateAction<typeChoiceTypeHouse>>;
 }) {
   return (
-    <Link className={styles.medium_button} style={{ zoom: zoom }} to={link} onClick={() => setActiveTab(state)}>
+    <Link
+      className={styles.medium_button}
+      style={{ zoom: zoom }}
+      to={link}
+      onClick={() => {
+        setActiveTab(state);
+        window.scrollTo(0, 0);
+      }}
+    >
       {text}
     </Link>
   );

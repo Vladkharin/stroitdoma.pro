@@ -28,7 +28,7 @@ export function Footer() {
             Telegram{" "}
           </a>{" "}
           <br />
-          <a className={styles.link} href={"https://www.instagram.com/stroitdoma.pro"}>
+          <a className={styles.link} href={"https://www.instagram.com/stroitdoma_pro"}>
             Instagram{" "}
           </a>{" "}
           <br />
@@ -74,18 +74,18 @@ export function Footer() {
       <div className={styles.wrapper_desc}>
         <div className={styles.item}>
           <h3 className={styles.title}>Разделы</h3>
-          <a className={styles.link} href="#">
+          <Link className={styles.link} to={"/catalog"}>
             Каталог
-          </a>
-          <a className={styles.link} href="#">
+          </Link>
+          <Link className={styles.link} to={"/built_houses"}>
             Построенные дома
-          </a>
-          <a className={styles.link} href="#">
+          </Link>
+          <Link className={styles.link} to={"/stub"}>
             Новости
-          </a>
-          <a className={styles.link} href="#">
+          </Link>
+          <Link className={styles.link} to={"/stub"}>
             Технология
-          </a>
+          </Link>
         </div>
         <div className={styles.line}></div>
         <div className={styles.right_side}>

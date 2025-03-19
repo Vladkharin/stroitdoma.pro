@@ -111,7 +111,7 @@
   }
 
   .table {
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 23.95%);
   }
 
   .text_and_swiper_wrapper {

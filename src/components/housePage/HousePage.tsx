@@ -70,6 +70,7 @@ export function HousePage() {
 
   const getHouse = () => {
     const pathName = locationPage.pathname.split("/")[2];
+    console.log(pathName);
     const house = itemsHouse.filter((item) => item.link === pathName)[0];
     setCoustHouse(house.coust);
     setHouse(house);
@@ -80,6 +81,8 @@ export function HousePage() {
 
   const fetchAdditionalServices = async (fetchUrl: string) => {
     const house = getHouse();
+
+    console.log(house);
 
     const response = await fetch(fetchUrl, { method: "GET" });
     const data: typeAdditionalServices = await response.json();
@@ -357,7 +360,7 @@ function houseInformation(
             {coustHouse == "Скоро будет доступна" ? ": Скоро будет" : `: ${stringConversion(coustHouse, priceAdditionalServices)} руб.`}
           </span>
         </div>
-        <div
+        {/* <div
           className={`${styles.button} ${styles.blue}`}
           style={{ display: house.videos?.length != 0 ? "" : "none" }}
           onClick={() => {
@@ -365,7 +368,7 @@ function houseInformation(
           }}
         >
           Посмотреть видео
-        </div>
+        </div> */}
         <div className={`${styles.button} ${styles.orange}`} style={{ display: "none" }} onClick={() => setStateModalForm(true)}>
           Получить коммерческое предложение
         </div>

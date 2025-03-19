@@ -8,7 +8,7 @@ import "swiper/css/autoplay";
 import { H1WithBr, H2, H3 } from "../../../titles/Titles";
 import { MediumButton } from "../../../buttons/Buttons";
 
-export function Information({ positionImg }: { positionImg: string }) {
+export function Information() {
   return (
     <section className={styles.information}>
       <div className={styles.information_wrapper}>
@@ -28,16 +28,19 @@ export function Information({ positionImg }: { positionImg: string }) {
             loop={true}
           >
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/1_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/information1.jpg`} alt="information" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/2_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/information2.jpg`} alt="information" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/3_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/information3.jpg`} alt="information" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/4_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/information4.jpg`} alt="information" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/information5.jpg`} alt="information" />
             </SwiperSlide>
           </Swiper>
         </div>

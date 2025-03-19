@@ -6,7 +6,7 @@ import styles from "./Catalog.module.css";
 export function Catalog({ setActiveTab }: { setActiveTab: React.Dispatch<React.SetStateAction<typeChoiceTypeHouse>> }) {
   return (
     <section className={styles.section}>
-      <H2 text={"Линейки домов"} size="big" />
+      <H2 text={"Каталог"} size="big" />
       <div className={styles.wrapper}>
         <div className={styles.tile}>
           <img src={"./img/catalog_1.jpg"} alt="" />

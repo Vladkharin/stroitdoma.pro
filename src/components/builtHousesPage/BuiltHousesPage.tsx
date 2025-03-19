@@ -9,7 +9,9 @@ import { H1 } from "../titles/Titles";
 import { MediumButton } from "../buttons/Buttons";
 import { IconsFixed } from "../iconsFixed/IconsFixed";
 
-export function BuiltHousesPage({ positionImg }: { positionImg: string }) {
+const IMGS: string[] = ["built6.jpg", "built7.jpg", "built8.jpg", "built9.jpg", "built10.jpg", "built11.jpg"];
+
+export function BuiltHousesPage() {
   return (
     <section className={styles.information}>
       <div className={styles.information_wrapper}>
@@ -29,92 +31,30 @@ export function BuiltHousesPage({ positionImg }: { positionImg: string }) {
             loop={true}
           >
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/1_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/2_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built2.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/3_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built3.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={`./img/4_${positionImg}.jpg`} alt="information" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built4.jpg"} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built5.jpg"} alt="" />
             </SwiperSlide>
           </Swiper>
         </div>
         <div className={styles.table}>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
-          <div>
-            <img className={styles.table_img} src="./img/1_gor.jpg" alt="" />
-          </div>
+          {IMGS.map((img) => {
+            return (
+              <div>
+                <img className={styles.table_img} src={"./img/" + img} alt="img" />
+              </div>
+            );
+          })}
         </div>
       </div>
       <IconsFixed path={"."} />

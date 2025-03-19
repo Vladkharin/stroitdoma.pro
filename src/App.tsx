@@ -13,12 +13,13 @@ import { StubPage } from "./components/stubPage/StubPage";
 
 function App() {
   // const [scroll, setScroll] = useState(0);
-  // const [mainPage] = useState("/");
   const [bodyStyle, setBodyStyle] = useState("");
 
   const [picturePosition, setPicturePosition] = useState("vert");
 
   const [activeTab, setActiveTab] = useState<typeChoiceTypeHouse>({ type: "all" });
+
+  // const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -37,7 +38,7 @@ function App() {
   // useEffect(() => {
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  // });
 
   useEffect(() => {
     document.body.style.overflow = bodyStyle;
@@ -45,11 +46,11 @@ function App() {
 
   return (
     <Router>
-      <Header setBodyStyle={setBodyStyle} />
+      <Header setBodyStyle={setBodyStyle} setActiveTab={setActiveTab} />
       <Routes>
         <Route path={"/:anchor?"} element={<MainPage positionImg={picturePosition} setActiveTab={setActiveTab} />} />
         <Route path={"/catalog"} element={<CatalogPage setActiveTab={setActiveTab} activeTab={activeTab} />}></Route>
-        <Route path={"/built_houses"} element={<BuiltHousesPage positionImg={picturePosition} />} />
+        <Route path={"/built_houses"} element={<BuiltHousesPage />} />
         <Route path={"/catalog/:houseName?"} element={<HousePage />} />
         <Route path={"/stub"} element={<StubPage />} />
         <Route path={"/payment"} element={<PaymentPage />} />
