@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
@@ -40,7 +40,7 @@ export function HousePage() {
   const [stateModalImg, setStateModalImg] = useState<boolean>(false);
   const [stateModalForm, setStateModalForm] = useState<boolean>(false);
 
-  const [positionY, setPositionY] = useState<number>(0);
+  // const [positionY, setPositionY] = useState<number>(0);
 
   const [imitationOfTimber, setImitationOfTimber] = useState<typeActiveAdditionalService>({
     name: "",
@@ -65,8 +65,8 @@ export function HousePage() {
     Скважина: 0,
   });
 
-  const myRef = useRef<HTMLElement>(null);
-  const [heightFromTopVideosBlock, setHeightFromTopVideosBlock] = useState<number>(0);
+  // const myRef = useRef<HTMLElement>(null);
+  // const [heightFromTopVideosBlock, setHeightFromTopVideosBlock] = useState<number>(0);
 
   const getHouse = () => {
     const pathName = locationPage.pathname.split("/")[2];
@@ -180,11 +180,11 @@ export function HousePage() {
   useEffect(() => {
     document.title = house?.houseName as string;
 
-    if (myRef.current) {
-      setHeightFromTopVideosBlock(myRef.current.getBoundingClientRect().y);
-    }
+    // if (myRef.current) {
+    //   setHeightFromTopVideosBlock(myRef.current.getBoundingClientRect().y);
+    // }
 
-    setPositionY(window.scrollY + heightFromTopVideosBlock - 101);
+    // setPositionY(window.scrollY + heightFromTopVideosBlock - 101);
   });
 
   function viewAddtionalServicesBlock() {
@@ -243,11 +243,7 @@ export function HousePage() {
               </button>
               {house ? houseImgs(house, activeImgIndex, setStateModalImg, setActiveImgIndex) : <div>Загружается</div>}
             </div>
-            {coustHouse && house ? (
-              houseInformation(house, coustHouse, priceAdditionalServices, heightFromTopVideosBlock, positionY, setStateModalForm)
-            ) : (
-              <div>Загружается</div>
-            )}
+            {coustHouse && house ? houseInformation(house, coustHouse, priceAdditionalServices, setStateModalForm) : <div>Загружается</div>}
           </div>
         </div>
       </div>
@@ -321,8 +317,8 @@ function houseInformation(
   house: typeItemHouse,
   coustHouse: string,
   priceAdditionalServices: number,
-  heightFromTopVideosBlock: number,
-  positionY: number,
+  // heightFromTopVideosBlock: number,
+  // positionY: number,
   setStateModalForm: React.Dispatch<React.SetStateAction<boolean>>
 ) {
   return (
