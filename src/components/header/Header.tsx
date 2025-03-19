@@ -41,14 +41,62 @@ export function Header({
 
           <div className={styles.wrapper}>
             <div className={styles.links}>
-              <Link to={"/"}>Главная</Link>
-              <Link to={"/catalog"} onClick={() => setActiveTab({ type: "all" })}>
+              <Link
+                onClick={() => {
+                  setNavMenuState(false);
+                  setBodyStyle("");
+                }}
+                to={"/"}
+              >
+                Главная
+              </Link>
+              <Link
+                to={"/catalog"}
+                onClick={() => {
+                  setActiveTab({ type: "all" });
+                  setNavMenuState(false);
+                  setBodyStyle("");
+                }}
+              >
                 Каталог
               </Link>
-              <Link to={"/built_houses"}>Построенные дома</Link>
-              <Link to={"/stub"}>Экскурсия</Link>
-              <Link to={"/stub"}>Участок</Link>
-              <Link to={"/stub"}>Контакты</Link>
+              <Link
+                onClick={() => {
+                  setNavMenuState(false);
+                  setBodyStyle("");
+                }}
+                to={"/built_houses"}
+              >
+                Построенные дома
+              </Link>
+              <Link
+                onClick={() => {
+                  setNavMenuState(false);
+                  setBodyStyle("");
+                }}
+                to={"/stub"}
+              >
+                Экскурсия
+              </Link>
+              <Link
+                onClick={() => {
+                  setNavMenuState(false);
+                  setBodyStyle("");
+                }}
+                to={"/stub"}
+              >
+                Участок
+              </Link>
+              <Link
+                to={"/"}
+                onClick={() => {
+                  window.scrollTo({ behavior: "smooth", top: document.documentElement.scrollHeight });
+                  setNavMenuState(false);
+                  setBodyStyle("");
+                }}
+              >
+                Контакты
+              </Link>
             </div>
             <div className={styles.texts}>
               <p>Телефоны</p>
