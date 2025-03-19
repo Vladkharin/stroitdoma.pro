@@ -43,6 +43,7 @@ export function Header({
             <div className={styles.links}>
               <Link
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   setNavMenuState(false);
                   setBodyStyle("");
                 }}
@@ -53,6 +54,7 @@ export function Header({
               <Link
                 to={"/catalog"}
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   setActiveTab({ type: "all" });
                   setNavMenuState(false);
                   setBodyStyle("");
@@ -62,6 +64,7 @@ export function Header({
               </Link>
               <Link
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   setNavMenuState(false);
                   setBodyStyle("");
                 }}
@@ -71,6 +74,7 @@ export function Header({
               </Link>
               <Link
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   setNavMenuState(false);
                   setBodyStyle("");
                 }}
@@ -80,6 +84,7 @@ export function Header({
               </Link>
               <Link
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   setNavMenuState(false);
                   setBodyStyle("");
                 }}
@@ -117,13 +122,27 @@ export function Header({
         <div className={styles.background} style={{ opacity: navMenuState ? "0.7" : "0", zIndex: navMenuState ? "15" : "-1" }}></div>
       </header>
       <header className={styles.header_desc}>
-        <Link to={"/"}>Главная</Link>
-        <Link to={"/catalog"} onClick={() => setActiveTab({ type: "all" })}>
+        <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
+          Главная
+        </Link>
+        <Link
+          to={"/catalog"}
+          onClick={() => {
+            setActiveTab({ type: "all" });
+            window.scrollTo(0, 0);
+          }}
+        >
           Каталог
         </Link>
-        <Link to={"/built_houses"}>Построенные дома</Link>
-        <Link to={"/stub"}>Экскурсия</Link>
-        <Link to={"/stub"}>Участок</Link>
+        <Link to={"/built_houses"} onClick={() => window.scrollTo(0, 0)}>
+          Построенные дома
+        </Link>
+        <Link to={"/stub"} onClick={() => window.scrollTo(0, 0)}>
+          Экскурсия
+        </Link>
+        <Link to={"/stub"} onClick={() => window.scrollTo(0, 0)}>
+          Участок
+        </Link>
         <a
           style={{ cursor: "pointer", transition: "all 0.5s" }}
           onClick={() => {

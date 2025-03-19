@@ -31,16 +31,16 @@ export function BuiltHousesPage() {
             loop={true}
           >
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1.jpg"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built1_new.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built2.jpg"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built2_new.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built3.jpg"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built3_new.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built4.jpg"} alt="" />
+              <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built4_new.jpg"} alt="" />
             </SwiperSlide>
             <SwiperSlide>
               <img className={styles.img} style={{ width: "100%", height: "100%" }} src={"./img/built5.jpg"} alt="" />
