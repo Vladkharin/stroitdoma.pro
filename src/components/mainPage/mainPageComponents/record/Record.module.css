@@ -22,6 +22,7 @@ form {
   gap: 20px;
   height: auto;
   width: 100%;
+  position: relative;
 }
 
 .input {
@@ -87,6 +88,89 @@ form {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+}
+.loader {
+  overflow: hidden;
+  font-size: 10px;
+  text-indent: -9999em;
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  background: #65abf8;
+  background: -moz-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: -webkit-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: -o-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: -ms-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: linear-gradient(to right, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  margin: 0 auto;
+}
+
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #65abf8;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+
+.loader:after {
+  background: white;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.error_text {
+  position: absolute;
+  color: red;
+  background-color: #fff;
+  padding: 8px 10px;
+  border-radius: 2px;
+  z-index: 1;
+  margin-top: 5px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+.error_text::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -12px;
+  left: 15%;
+  border: 6px solid transparent;
+  border-bottom-color: transparent;
+  border-bottom-color: #fff;
+}
+
+.position_error_second_input {
+  top: 40px;
+  left: 10px;
 }
 
 @media (min-width: 960px) {

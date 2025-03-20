@@ -1,51 +1,49 @@
-let API_URL = 'http://likehouse-back.ru/api'
+let API_URL = "http://likehouse-back.ru/api";
 
 type OPTIONS = {
-    method: string,
+  method: string;
+  headers: {
+    "Content-Type": string;
+  };
+  body?: string;
+};
+
+const f = async (method: string, data: string, url: string) => {
+  const options: OPTIONS = {
+    method,
     headers: {
-        'Content-Type': string
+      "Content-Type": "application/json",
     },
-    body? : string
-}
+  };
 
-const f = async (method: string, data: string, url: string) =>  {
+  API_URL = "";
 
-    const options: OPTIONS = {
-        method,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
+  if (data != "") {
+    options.body = data as string;
+    API_URL = "http://likehouse-back.ru/api";
+  }
 
-    API_URL = ''
+  const response = await fetch(API_URL + url, options);
 
-    if (data != '') {
-        options.body = data as string
-        API_URL = 'http://likehouse-back.ru/api'
-    }
-
-
-    const response = await fetch(API_URL + url, options)
-
-    try {
-        return response.json()
-    } catch (error) {
-        console.log(error)
-    }
-}
+  try {
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export async function sendEmail(data: string) {
-    return await f('POST', data, '/sendemail')
+  return await f("POST", data, "/sendemailNew");
 }
 
-export async function sendOrder(data: string) {
-    return await f('POST', data, '/sendorder')
-}
+// export async function sendOrder(data: string) {
+//   return await f("POST", data, "/sendorder");
+// }
 
-export async function sendShare(data: string) {
-    return await f('POST', data, '/sendshare')
-}
+// export async function sendShare(data: string) {
+//   return await f("POST", data, "/sendshare");
+// }
 
 export async function getAdditionalServices() {
-    return await f('GET', '', './1c_site.json')
+  return await f("GET", "", "./1c_site.json");
 }
