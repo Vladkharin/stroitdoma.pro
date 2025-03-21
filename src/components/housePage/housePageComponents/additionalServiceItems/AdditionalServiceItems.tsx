@@ -21,7 +21,7 @@ export function AdditionalServiceItems(
   choiceAdditionalServices: typeChoiceAdditionalServices,
   setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>,
   imitationOfTimber: typeActiveAdditionalService,
-  wallsAndCeilings: typeActiveAdditionalService
+  setFacadeFinishing: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>
 ) {
   return (
     <div className={styles.services}>
@@ -73,10 +73,10 @@ export function AdditionalServiceItems(
                               listActiveAdditionalServices,
                               choiceAdditionalServices,
                               imitationOfTimber,
-                              wallsAndCeilings,
                               setListActiveAdditionalServices,
                               setPriceAdditionalServices,
-                              services
+                              services,
+                              setFacadeFinishing
                             )
                           }
                         />
@@ -109,10 +109,10 @@ export function AdditionalServiceItems(
                               listActiveAdditionalServices,
                               choiceAdditionalServices,
                               imitationOfTimber,
-                              wallsAndCeilings,
                               setListActiveAdditionalServices,
                               setPriceAdditionalServices,
-                              services
+                              services,
+                              setFacadeFinishing
                             )
                           }
                         />
@@ -121,6 +121,9 @@ export function AdditionalServiceItems(
                   </React.Fragment>
                 );
               } else {
+                if (section.Код === "000000132") {
+                  return;
+                }
                 return (
                   <React.Fragment key={secondIndex}>
                     <div className={styles.service}>
@@ -136,10 +139,10 @@ export function AdditionalServiceItems(
                             listActiveAdditionalServices,
                             choiceAdditionalServices,
                             imitationOfTimber,
-                            wallsAndCeilings,
                             setListActiveAdditionalServices,
                             setPriceAdditionalServices,
-                            services
+                            services,
+                            setFacadeFinishing
                           )
                         }
                       >
@@ -155,10 +158,10 @@ export function AdditionalServiceItems(
                               listActiveAdditionalServices,
                               choiceAdditionalServices,
                               imitationOfTimber,
-                              wallsAndCeilings,
                               setListActiveAdditionalServices,
                               setPriceAdditionalServices,
-                              services
+                              services,
+                              setFacadeFinishing
                             )
                           }
                         ></button>

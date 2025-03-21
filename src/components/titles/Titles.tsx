@@ -7,7 +7,11 @@ export function H1({ text }: { text: string }) {
 export function H1WithBr() {
   return (
     <h1 className={styles.h1}>
-      СТРОИТ - компания честно строит каркасные дома <br className={styles.br} /> в Москве <br className={styles.br} /> и Подмосковье
+      компания <br className={styles.br} />
+      СТРОИТ <br className={styles.br} />
+      каркасные дома <br className={styles.br} />
+      в Москве и Подмосковье <br className={styles.br} />
+      честно и на любой бюджет
     </h1>
   );
 }

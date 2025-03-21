@@ -22,17 +22,11 @@ export async function postData(
 
   const form = event.nativeEvent.target as HTMLFormElement;
 
-  const inputTel = (form.childNodes[2].childNodes[2] as HTMLInputElement).value;
+  // const inputTel = (form.childNodes[2].childNodes[2] as HTMLInputElement).value;
 
   const error = await formValidate(form, setInputsError, inputsError, setFetchStatus);
 
   setFetchStatus(FORM_STATUS_MESSAGE.loading);
-
-  console.log();
-
-  if (await checkingTheNumberForWhatsApp(inputTel)) {
-    console.log(await sendMessageInWA(inputTel));
-  }
 
   if (error === 0) {
     setFetchStatus("");
@@ -65,48 +59,48 @@ export async function postData(
   }
 }
 
-async function sendMessageInWA(inputTel: string) {
-  const VITE_API_URL = "https://api.green-api.com";
-  const VITE_ID_INSTANCE = "1101773268";
-  const VITE_API_TOKEN_INSTANCE = "b0e2453f8a344435ad674f4fa5b2b1fbf340229d23674e45a7";
+// async function sendMessageInWA(inputTel: string) {
+//   const VITE_API_URL = "https://api.green-api.com";
+//   const VITE_ID_INSTANCE = "1101773268";
+//   const VITE_API_TOKEN_INSTANCE = "b0e2453f8a344435ad674f4fa5b2b1fbf340229d23674e45a7";
 
-  const body = {
-    chatId: `${inputTel.slice(1).split(" ").join("")}@c.us`,
-    message: "ку",
-  };
+//   const body = {
+//     chatId: `${inputTel.slice(1).split(" ").join("")}@c.us`,
+//     message: "ку",
+//   };
 
-  const url = VITE_API_URL + "/waInstance" + VITE_ID_INSTANCE + "/sendMessage/" + VITE_API_TOKEN_INSTANCE;
+//   const url = VITE_API_URL + "/waInstance" + VITE_ID_INSTANCE + "/sendMessage/" + VITE_API_TOKEN_INSTANCE;
 
-  const responseFetchPhone = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: { "Content-Type": "application/json" },
-  });
+//   const responseFetchPhone = await fetch(url, {
+//     method: "POST",
+//     body: JSON.stringify(body),
+//     headers: { "Content-Type": "application/json" },
+//   });
 
-  return await responseFetchPhone.json();
-}
+//   return await responseFetchPhone.json();
+// }
 
-async function checkingTheNumberForWhatsApp(inputTel: string) {
-  const VITE_API_URL = "https://api.green-api.com";
-  const VITE_ID_INSTANCE = "1101773268";
-  const VITE_API_TOKEN_INSTANCE = "b0e2453f8a344435ad674f4fa5b2b1fbf340229d23674e45a7";
+// async function checkingTheNumberForWhatsApp(inputTel: string) {
+//   const VITE_API_URL = "https://api.green-api.com";
+//   const VITE_ID_INSTANCE = "1101773268";
+//   const VITE_API_TOKEN_INSTANCE = "b0e2453f8a344435ad674f4fa5b2b1fbf340229d23674e45a7";
 
-  const body = {
-    phoneNumber: inputTel.slice(1).split(" ").join(""),
-  };
+//   const body = {
+//     phoneNumber: inputTel.slice(1).split(" ").join(""),
+//   };
 
-  const url = VITE_API_URL + "/waInstance" + VITE_ID_INSTANCE + "/checkWhatsapp/" + VITE_API_TOKEN_INSTANCE;
+//   const url = VITE_API_URL + "/waInstance" + VITE_ID_INSTANCE + "/checkWhatsapp/" + VITE_API_TOKEN_INSTANCE;
 
-  const responseFetchPhone = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: { "Content-Type": "application/json" },
-  });
+//   const responseFetchPhone = await fetch(url, {
+//     method: "POST",
+//     body: JSON.stringify(body),
+//     headers: { "Content-Type": "application/json" },
+//   });
 
-  const data = await responseFetchPhone.json();
+//   const data = await responseFetchPhone.json();
 
-  return data;
-}
+//   return data;
+// }
 
 async function formValidate(
   form: HTMLFormElement,

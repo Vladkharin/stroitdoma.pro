@@ -19,8 +19,6 @@ export async function postData(
 
   const error = formValidate(form, setInputsError, inputsError, setFetchStatus);
 
-  console.log(form.childNodes);
-
   const phone = (form.childNodes[1] as HTMLInputElement).value;
 
   setFetchStatus(FORM_STATUS_MESSAGE.loading);
@@ -40,7 +38,6 @@ export async function postData(
 
     const response = await sendEmail(JSON.stringify(object));
 
-    console.log(response);
     if (response.success) {
       setFetchStatus(FORM_STATUS_MESSAGE.success);
       form.reset();

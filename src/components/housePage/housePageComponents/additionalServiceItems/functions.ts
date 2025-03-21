@@ -75,6 +75,7 @@ function onBtn(
   setListActiveAdditionalServices: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>,
   services: typeAdditionalService,
   setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>,
+  setFacadeFinishing: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>,
   index = -1,
   count = 1
 ) {
@@ -114,12 +115,29 @@ function onBtn(
     coust: coust,
   };
 
-  console.log(coust);
-
   s.push(object);
 
-  const price = s.reduce((acc, item) => acc + item.coust * item.count, 0);
+  const facadeArray = s.filter(
+    (item) =>
+      item.code === "000000144" ||
+      item.code === "000000105" ||
+      item.code === "000000101" ||
+      item.code === "000000102" ||
+      item.code === "000000132"
+  );
 
+  const otherArray = s.filter(
+    (item) =>
+      item.code !== "000000144" &&
+      item.code !== "000000105" &&
+      item.code !== "000000101" &&
+      item.code !== "000000102" &&
+      item.code !== "000000132"
+  );
+
+  const price = otherArray.reduce((acc, item) => acc + item.coust * item.count, 0);
+
+  setFacadeFinishing(facadeArray);
   setPriceAdditionalServices(price);
   setListActiveAdditionalServices([...s]);
 }
@@ -129,13 +147,12 @@ function offBtn(
   listActiveAdditionalServices: typeListActiveAdditionalServices,
   choiceAdditionalServices: typeChoiceAdditionalServices,
   imitationOfTimber: typeActiveAdditionalService,
-  wallsAndCeilings: typeActiveAdditionalService,
   setListActiveAdditionalServices: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>,
-  setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>
+  setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>,
+  setFacadeFinishing: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>
 ) {
   let endArray = listActiveAdditionalServices.filter((item) => item.code != code);
   const firstIndex = listActiveAdditionalServices.findIndex((item) => item.code == "000000144");
-  const secondIndex = listActiveAdditionalServices.findIndex((item) => item.code == "000000132");
   if (
     typeof choiceAdditionalServices["mutually exclusive"][code] !== "undefined" &&
     firstIndex === -1 &&
@@ -149,31 +166,39 @@ function offBtn(
     });
   }
 
-  if (
-    typeof choiceAdditionalServices["mutually exclusive"][code] !== "undefined" &&
-    secondIndex === -1 &&
-    choiceAdditionalServices["mutually exclusive"][code].findIndex((item) => item === "000000132") !== -1
-  ) {
-    endArray.push({
-      code: wallsAndCeilings.code,
-      name: wallsAndCeilings.name,
-      count: wallsAndCeilings.count,
-      coust: wallsAndCeilings.coust,
-    });
-  }
-
   if (choiceAdditionalServices["cant be removed without"][code]) {
     const cantBeRemovedWithoutArray = [...cantBeRemovedWithout(code, choiceAdditionalServices, listActiveAdditionalServices)];
 
     endArray = listActiveAdditionalServices.filter((item) => !cantBeRemovedWithoutArray.includes(item));
   }
 
-  if (code === "000000144" || code === "000000132") {
+  if (code === "000000144") {
     return;
   }
   const arr = endArray.filter((item) => item.code !== code);
 
-  setPriceAdditionalServices(arr.reduce((acc, item) => acc + item.coust * item.count, 0));
+  const facadeArray = arr.filter(
+    (item) =>
+      item.code === "000000144" ||
+      item.code === "000000105" ||
+      item.code === "000000101" ||
+      item.code === "000000102" ||
+      item.code === "000000132"
+  );
+
+  const otherArray = arr.filter(
+    (item) =>
+      item.code !== "000000144" &&
+      item.code !== "000000105" &&
+      item.code !== "000000101" &&
+      item.code !== "000000102" &&
+      item.code !== "000000132"
+  );
+
+  const price = otherArray.reduce((acc, item) => acc + item.coust * item.count, 0);
+
+  setFacadeFinishing(facadeArray);
+  setPriceAdditionalServices(price);
   setListActiveAdditionalServices(arr.filter((item) => item.count != 0));
 }
 
@@ -185,10 +210,10 @@ export const addorSubtractPriceOnButton = (
   listActiveAdditionalServices: typeListActiveAdditionalServices,
   choiceAdditionalServices: typeChoiceAdditionalServices,
   imitationOfTimber: typeActiveAdditionalService,
-  wallsAndCeilings: typeActiveAdditionalService,
   setListActiveAdditionalServices: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>,
   setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>,
-  services: typeAdditionalService
+  services: typeAdditionalService,
+  setFacadeFinishing: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>
 ) => {
   if (event.target instanceof HTMLButtonElement) {
     if (event.target.classList[0] === styles.btn_inactive) {
@@ -200,7 +225,8 @@ export const addorSubtractPriceOnButton = (
         listActiveAdditionalServices,
         setListActiveAdditionalServices,
         services,
-        setPriceAdditionalServices
+        setPriceAdditionalServices,
+        setFacadeFinishing
       );
     } else if (event.target.classList[0] === styles.btn_active) {
       offBtn(
@@ -208,9 +234,9 @@ export const addorSubtractPriceOnButton = (
         listActiveAdditionalServices,
         choiceAdditionalServices,
         imitationOfTimber,
-        wallsAndCeilings,
         setListActiveAdditionalServices,
-        setPriceAdditionalServices
+        setPriceAdditionalServices,
+        setFacadeFinishing
       );
     }
   }
@@ -224,10 +250,10 @@ export const addorSubtractPriceOnDiv = (
   listActiveAdditionalServices: typeListActiveAdditionalServices,
   choiceAdditionalServices: typeChoiceAdditionalServices,
   imitationOfTimber: typeActiveAdditionalService,
-  wallsAndCeilings: typeActiveAdditionalService,
   setListActiveAdditionalServices: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>,
   setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>,
-  services: typeAdditionalService
+  services: typeAdditionalService,
+  setFacadeFinishing: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>
 ) => {
   if (event.target instanceof HTMLDivElement) {
     const children = event.target.children[0];
@@ -241,7 +267,8 @@ export const addorSubtractPriceOnDiv = (
           listActiveAdditionalServices,
           setListActiveAdditionalServices,
           services,
-          setPriceAdditionalServices
+          setPriceAdditionalServices,
+          setFacadeFinishing
         );
       } else if (children.classList[0] === styles.btn_active) {
         offBtn(
@@ -249,9 +276,9 @@ export const addorSubtractPriceOnDiv = (
           listActiveAdditionalServices,
           choiceAdditionalServices,
           imitationOfTimber,
-          wallsAndCeilings,
           setListActiveAdditionalServices,
-          setPriceAdditionalServices
+          setPriceAdditionalServices,
+          setFacadeFinishing
         );
       }
     }
@@ -267,10 +294,10 @@ export function changeInputState(
   listActiveAdditionalServices: typeListActiveAdditionalServices,
   choiceAdditionalServices: typeChoiceAdditionalServices,
   imitationOfTimber: typeActiveAdditionalService,
-  wallsAndCeilings: typeActiveAdditionalService,
   setListActiveAdditionalServices: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>,
   setPriceAdditionalServices: React.Dispatch<React.SetStateAction<number>>,
-  services: typeAdditionalService
+  services: typeAdditionalService,
+  setFacadeFinishing: React.Dispatch<React.SetStateAction<typeListActiveAdditionalServices>>
 ) {
   if (event.target instanceof HTMLInputElement) {
     const element = event.target.parentElement?.previousSibling as HTMLButtonElement;
@@ -284,9 +311,9 @@ export function changeInputState(
         listActiveAdditionalServices,
         choiceAdditionalServices,
         imitationOfTimber,
-        wallsAndCeilings,
         setListActiveAdditionalServices,
-        setPriceAdditionalServices
+        setPriceAdditionalServices,
+        setFacadeFinishing
       );
     } else if (event.target.valueAsNumber > 0) {
       coust = 0;
@@ -315,6 +342,7 @@ export function changeInputState(
         setListActiveAdditionalServices,
         services,
         setPriceAdditionalServices,
+        setFacadeFinishing,
         index,
         event.target.valueAsNumber
       );
@@ -325,9 +353,9 @@ export function changeInputState(
         listActiveAdditionalServices,
         choiceAdditionalServices,
         imitationOfTimber,
-        wallsAndCeilings,
         setListActiveAdditionalServices,
-        setPriceAdditionalServices
+        setPriceAdditionalServices,
+        setFacadeFinishing
       );
     }
   }

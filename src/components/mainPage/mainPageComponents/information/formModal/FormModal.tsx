@@ -197,7 +197,6 @@ async function postData(
 
     const response = await sendEmail(JSON.stringify(object));
 
-    console.log(response);
     if (response.success) {
       setFetchStatus(FORM_STATUS_MESSAGE.success);
       form.reset();

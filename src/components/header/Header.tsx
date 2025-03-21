@@ -72,7 +72,7 @@ export function Header({
               >
                 Построенные дома
               </Link>
-              <Link
+              {/* <Link
                 onClick={() => {
                   window.scrollTo(0, 0);
                   setNavMenuState(false);
@@ -91,7 +91,7 @@ export function Header({
                 to={"/stub"}
               >
                 Участок
-              </Link>
+              </Link> */}
               <a
                 onClick={() => {
                   window.scrollTo({ behavior: "smooth", top: document.documentElement.scrollHeight });
@@ -137,12 +137,12 @@ export function Header({
         <Link to={"/built_houses"} onClick={() => window.scrollTo(0, 0)}>
           Построенные дома
         </Link>
-        <Link to={"/stub"} onClick={() => window.scrollTo(0, 0)}>
+        {/* <Link to={"/stub"} onClick={() => window.scrollTo(0, 0)}>
           Экскурсия
         </Link>
         <Link to={"/stub"} onClick={() => window.scrollTo(0, 0)}>
           Участок
-        </Link>
+        </Link> */}
         <a
           style={{ cursor: "pointer", transition: "all 0.5s" }}
           onClick={() => {

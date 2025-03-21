@@ -24,7 +24,7 @@ export function IconsFixed({ path }: { path: string }) {
         ))}
       </div>
       <Link to={"/"} className={styles.side_inscription}>
-        Stroit doma
+        СТРОИТ
       </Link>
     </>
   );

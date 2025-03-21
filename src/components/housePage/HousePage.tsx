@@ -33,7 +33,8 @@ export function HousePage() {
 
   const [additionalService, setAdditionalService] = useState<typeAdditionalService>();
   const [house, setHouse] = useState<typeItemHouse | undefined>();
-  const [coustHouse, setCoustHouse] = useState<string | undefined>(house?.coust);
+  const [coustHouse, setCoustHouse] = useState<string>("0");
+  const [facadeFinishing, setFacadeFinishing] = useState<typeListActiveAdditionalServices>([]);
   const [priceAdditionalServices, setPriceAdditionalServices] = useState<number>(0);
   const [listActiveAdditionalServices, setListActiveAdditionalServices] = useState<typeListActiveAdditionalServices>([]);
   const [activeImgIndex, setActiveImgIndex] = useState<number>(0);
@@ -43,13 +44,6 @@ export function HousePage() {
   // const [positionY, setPositionY] = useState<number>(0);
 
   const [imitationOfTimber, setImitationOfTimber] = useState<typeActiveAdditionalService>({
-    name: "",
-    code: "",
-    count: 0,
-    coust: 0,
-  });
-
-  const [wallsAndCeilings, setWallsAndCeilings] = useState<typeActiveAdditionalService>({
     name: "",
     code: "",
     count: 0,
@@ -70,9 +64,7 @@ export function HousePage() {
 
   const getHouse = () => {
     const pathName = locationPage.pathname.split("/")[2];
-    console.log(pathName);
     const house = itemsHouse.filter((item) => item.link === pathName)[0];
-    setCoustHouse(house.coust);
     setHouse(house);
 
     return house;
@@ -81,9 +73,6 @@ export function HousePage() {
 
   const fetchAdditionalServices = async (fetchUrl: string) => {
     const house = getHouse();
-
-    console.log(house);
-
     const response = await fetch(fetchUrl, { method: "GET" });
     const data: typeAdditionalServices = await response.json();
 
@@ -141,13 +130,6 @@ export function HousePage() {
                   count: 1,
                   coust: subsection.Стоимость,
                 });
-
-                setWallsAndCeilings({
-                  name: subsection.Подраздел,
-                  code: subsection.Код,
-                  count: 1,
-                  coust: subsection.Стоимость,
-                });
               }
             });
           }
@@ -158,7 +140,30 @@ export function HousePage() {
         });
 
         if (house.coust) {
-          setPriceAdditionalServices(array.reduce((acc, currnetValue) => acc + currnetValue.coust, 0));
+          setPriceAdditionalServices(
+            array
+              .filter(
+                (item) =>
+                  item.code !== "000000144" &&
+                  item.code !== "000000105" &&
+                  item.code !== "000000101" &&
+                  item.code !== "000000102" &&
+                  item.code !== "000000132"
+              )
+              .reduce((acc, currnetValue) => acc + currnetValue.coust, 0)
+          );
+
+          setFacadeFinishing([
+            ...facadeFinishing,
+            ...array.filter(
+              (item) =>
+                item.code == "000000144" ||
+                item.code == "000000105" ||
+                item.code == "000000101" ||
+                item.code == "000000102" ||
+                item.code == "000000132"
+            ),
+          ]);
         }
 
         setListActiveAdditionalServices([...array]);
@@ -205,7 +210,7 @@ export function HousePage() {
             choiceAdditionalServices,
             setPriceAdditionalServices,
             imitationOfTimber,
-            wallsAndCeilings
+            setFacadeFinishing
           )
         ) : (
           <div>Пока не добавили</div>
@@ -213,8 +218,6 @@ export function HousePage() {
       </>
     );
   }
-
-  console.log(listActiveAdditionalServices);
 
   return (
     <React.Fragment>
@@ -243,7 +246,11 @@ export function HousePage() {
               </button>
               {house ? houseImgs(house, activeImgIndex, setStateModalImg, setActiveImgIndex) : <div>Загружается</div>}
             </div>
-            {coustHouse && house ? houseInformation(house, coustHouse, priceAdditionalServices, setStateModalForm) : <div>Загружается</div>}
+            {coustHouse && house ? (
+              houseInformation(house, coustHouse, priceAdditionalServices, setStateModalForm, facadeFinishing)
+            ) : (
+              <div>Загружается</div>
+            )}
           </div>
         </div>
       </div>
@@ -258,9 +265,17 @@ export function HousePage() {
       {/* {house?.videos?.length != 0 ? <VideoComponent myRef={myRef} house={house} /> : ""} */}
 
       <div className={styles.coust}>
-        Стоимость
+        Стоимость дома
         <span>
-          {coustHouse == "Скоро будет доступна" ? ": Скоро будет" : `: ${stringConversion(coustHouse, priceAdditionalServices)} руб.`}
+          {coustHouse == "Скоро будет доступна"
+            ? ": Скоро будет"
+            : `: ${stringConversion(sumCoustHouseAndFacadeFinishing(coustHouse, facadeFinishing))} руб.`}
+        </span>
+      </div>
+      <div className={styles.order}>
+        Дополнительные услуги
+        <span>
+          {coustHouse == "Скоро будет доступна" ? ": Скоро будет" : `: ${stringConversion(priceAdditionalServices.toString())} руб.`}
         </span>
       </div>
       <button className={styles.order} style={{ display: "none" }} onClick={() => setStateModalForm(true)}>
@@ -296,10 +311,8 @@ export function HousePage() {
   );
 }
 
-function stringConversion(task: string | undefined, priceAdditionalServices: number) {
+function stringConversion(coust: string) {
   const array: string[] = [];
-
-  const coust = (Number(task) + priceAdditionalServices).toString();
 
   coust.split("").forEach((item, index) => {
     if (coust.length - index == 7) {
@@ -313,13 +326,21 @@ function stringConversion(task: string | undefined, priceAdditionalServices: num
   return array.join("");
 }
 
+function sumCoustHouseAndFacadeFinishing(coustHouse: string, facadeFinishing: typeListActiveAdditionalServices) {
+  const coustFacade = facadeFinishing.reduce((acc, currentValue) => acc + currentValue.coust * currentValue.count, 0);
+  const price = (coustFacade + Number(coustHouse)).toString();
+
+  return price;
+}
+
 function houseInformation(
   house: typeItemHouse,
   coustHouse: string,
   priceAdditionalServices: number,
   // heightFromTopVideosBlock: number,
   // positionY: number,
-  setStateModalForm: React.Dispatch<React.SetStateAction<boolean>>
+  setStateModalForm: React.Dispatch<React.SetStateAction<boolean>>,
+  facadeFinishing: typeListActiveAdditionalServices
 ) {
   return (
     <div className={styles.information_texts}>
@@ -351,9 +372,17 @@ function houseInformation(
         : false}
       <div className={styles.buttons_wrapper}>
         <div className={styles.button}>
-          Стоимость
+          Стоимость дома
           <span>
-            {coustHouse == "Скоро будет доступна" ? ": Скоро будет" : `: ${stringConversion(coustHouse, priceAdditionalServices)} руб.`}
+            {coustHouse == "Скоро будет доступна"
+              ? ": Скоро будет"
+              : `: ${stringConversion(sumCoustHouseAndFacadeFinishing(coustHouse, facadeFinishing))} руб.`}
+          </span>
+        </div>
+        <div className={styles.button}>
+          Дополнительные услуги
+          <span>
+            {coustHouse == "Скоро будет доступна" ? ": Скоро будет" : `: ${stringConversion(priceAdditionalServices.toString())} руб.`}
           </span>
         </div>
         {/* <div
