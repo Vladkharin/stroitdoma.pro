@@ -9,7 +9,26 @@ import { H1 } from "../titles/Titles";
 import { MediumButton } from "../buttons/Buttons";
 import { IconsFixed } from "../iconsFixed/IconsFixed";
 
-const IMGS: string[] = ["built6.jpg", "built7.jpg", "built8.jpg", "built9.jpg", "built10.jpg", "built11.jpg"];
+const IMGS: string[] = [
+  "built6.jpg",
+  "built7.jpg",
+  "built8.jpg",
+  "built9.jpg",
+  "built10.jpg",
+  "built11.jpg",
+  "built12.jpg",
+  "built13.jpg",
+  "built14.jpg",
+  "built15.jpg",
+  "built17.jpg",
+  "built18.jpg",
+  "built19.jpg",
+  "built20.jpg",
+  "built21.jpg",
+  "built22.jpg",
+  "built23.jpg",
+  "built24.jpg",
+];
 
 export function BuiltHousesPage() {
   return (

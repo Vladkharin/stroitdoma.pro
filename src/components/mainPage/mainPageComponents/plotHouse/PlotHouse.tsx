@@ -14,8 +14,6 @@ export function PlotHouse({ positionImg }: { positionImg: string }) {
         <div className={styles.block_text}>
           <H1 text={"Участок + дом"} />
           <div className={styles.wrapper}>
-            <H4 texts={["Если у вас нет участка, поможем в подборе подходящего.", "Все в 1 ипотеку!"]} />
-
             <form className={styles.form}>
               <input
                 className={styles.input}
@@ -51,6 +49,7 @@ export function PlotHouse({ positionImg }: { positionImg: string }) {
                 Подробнее
               </button>
             </form>
+            <H4 texts={["Если у вас нет участка, поможем в подборе подходящего.", "Все в 1 ипотеку!"]} />
           </div>
         </div>
 
