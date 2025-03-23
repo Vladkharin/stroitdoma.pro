@@ -34,6 +34,14 @@ export function AdditionalServiceItems(
           return;
         }
 
+        if (service["Раздел"] === "Веранда") {
+          return;
+        }
+
+        if (service["Раздел"] === "Фундамент") {
+          return;
+        }
+
         index = 19192 + index;
         return (
           <React.Fragment key={index}>

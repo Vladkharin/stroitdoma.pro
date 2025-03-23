@@ -60,6 +60,13 @@ export function CatalogPage({
             if (section["Раздел"] == "Строительство дома в базовой комплектации") {
               coust = coust + section["Подразделы"][0]["Стоимость"];
             }
+
+            if (section["Раздел"] == "Фундамент") {
+              coust = coust + section["Подразделы"][0]["Стоимость"];
+            }
+            if (section["Раздел"] == "Веранда") {
+              coust = coust + section["Подразделы"][0]["Стоимость"];
+            }
           });
         }
       });

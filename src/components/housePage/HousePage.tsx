@@ -134,6 +134,31 @@ export function HousePage() {
             });
           }
 
+          if (section["Раздел"] === "Фундамент") {
+            section["Подразделы"].forEach((subsection) => {
+              if (subsection["Код"] === "000000147") {
+                array.push({
+                  name: subsection.Подраздел,
+                  code: subsection.Код,
+                  count: 1,
+                  coust: subsection.Стоимость,
+                });
+              }
+            });
+          }
+          if (section["Раздел"] === "Веранда") {
+            section["Подразделы"].forEach((subsection) => {
+              if (subsection["Код"] === "000000150") {
+                array.push({
+                  name: subsection.Подраздел,
+                  code: subsection.Код,
+                  count: 1,
+                  coust: subsection.Стоимость,
+                });
+              }
+            });
+          }
+
           if (section["Раздел"] === "Строительство дома в базовой комплектации") {
             setCoustHouse(section["Подразделы"][0].Стоимость.toString());
           }
@@ -148,7 +173,9 @@ export function HousePage() {
                   item.code !== "000000105" &&
                   item.code !== "000000101" &&
                   item.code !== "000000102" &&
-                  item.code !== "000000132"
+                  item.code !== "000000132" &&
+                  item.code !== "000000150" &&
+                  item.code !== "000000147"
               )
               .reduce((acc, currnetValue) => acc + currnetValue.coust, 0)
           );
@@ -161,7 +188,9 @@ export function HousePage() {
                 item.code == "000000105" ||
                 item.code == "000000101" ||
                 item.code == "000000102" ||
-                item.code == "000000132"
+                item.code == "000000132" ||
+                item.code == "000000150" ||
+                item.code == "000000147"
             ),
           ]);
         }

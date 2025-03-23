@@ -119,11 +119,13 @@ function onBtn(
 
   const facadeArray = s.filter(
     (item) =>
-      item.code === "000000144" ||
-      item.code === "000000105" ||
-      item.code === "000000101" ||
-      item.code === "000000102" ||
-      item.code === "000000132"
+      item.code == "000000144" ||
+      item.code == "000000105" ||
+      item.code == "000000101" ||
+      item.code == "000000102" ||
+      item.code == "000000132" ||
+      item.code == "000000150" ||
+      item.code == "000000147"
   );
 
   const otherArray = s.filter(
@@ -132,7 +134,9 @@ function onBtn(
       item.code !== "000000105" &&
       item.code !== "000000101" &&
       item.code !== "000000102" &&
-      item.code !== "000000132"
+      item.code !== "000000132" &&
+      item.code !== "000000150" &&
+      item.code !== "000000147"
   );
 
   const price = otherArray.reduce((acc, item) => acc + item.coust * item.count, 0);
@@ -179,11 +183,13 @@ function offBtn(
 
   const facadeArray = arr.filter(
     (item) =>
-      item.code === "000000144" ||
-      item.code === "000000105" ||
-      item.code === "000000101" ||
-      item.code === "000000102" ||
-      item.code === "000000132"
+      item.code == "000000144" ||
+      item.code == "000000105" ||
+      item.code == "000000101" ||
+      item.code == "000000102" ||
+      item.code == "000000132" ||
+      item.code == "000000150" ||
+      item.code == "000000147"
   );
 
   const otherArray = arr.filter(
@@ -192,7 +198,9 @@ function offBtn(
       item.code !== "000000105" &&
       item.code !== "000000101" &&
       item.code !== "000000102" &&
-      item.code !== "000000132"
+      item.code !== "000000132" &&
+      item.code !== "000000150" &&
+      item.code !== "000000147"
   );
 
   const price = otherArray.reduce((acc, item) => acc + item.coust * item.count, 0);
