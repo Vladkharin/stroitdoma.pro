@@ -16,8 +16,6 @@ export function Record({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
     inputPhone: "",
   });
 
-  console.log(fetchStatus);
-
   return (
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>

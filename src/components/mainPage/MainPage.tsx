@@ -31,7 +31,7 @@ export function MainPage({
       <Catalog setActiveTab={setActiveTab} />
       <BuiltHouses />
       <Record setBodyStyle={setBodyStyle} />
-      <PlotHouse positionImg={positionImg} />
+      <PlotHouse positionImg={positionImg} setBodyStyle={setBodyStyle} />
     </>
   );
 }
