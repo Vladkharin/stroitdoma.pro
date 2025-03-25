@@ -18,7 +18,7 @@ export function PlotHouse({ positionImg, setBodyStyle }: { positionImg: string; 
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
-          <H1 text={"Участок + дом"} />
+          <H1 texts={["Участок + дом"]} />
           <div className={styles.wrapper}>
             <form className={styles.form} onSubmit={(event) => postData(event, setInputsError, inputsError, setFetchStatus, setBodyStyle)}>
               <input

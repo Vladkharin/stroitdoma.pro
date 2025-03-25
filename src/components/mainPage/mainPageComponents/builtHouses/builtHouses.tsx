@@ -13,7 +13,7 @@ export function BuiltHouses() {
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
-          <H1 text={"Дома, которые мы построили для наших клиентов"} />
+          <H1 texts={["Дома, которые мы построили для наших клиентов"]} />
           <MediumButton text={"Смотреть больше"} link={"/built_houses"} zoom={1} />
         </div>
         <Swiper

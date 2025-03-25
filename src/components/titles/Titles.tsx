@@ -1,8 +1,17 @@
 import React from "react";
 import styles from "./titles.module.css";
 
-export function H1({ text }: { text: string }) {
-  return <h1 className={styles.h1}>{text}</h1>;
+export function H1({ texts }: { texts: string[] }) {
+  return (
+    <h1 className={styles.h1}>
+      {texts.map((text, index) => (
+        <React.Fragment key={index}>
+          {text}
+          <br />
+        </React.Fragment>
+      ))}
+    </h1>
+  );
 }
 
 export function H1Black({ text }: { text: string }) {
@@ -26,7 +35,8 @@ export function H1WithBr() {
       компания <br className={styles.br} />
       СТРОИТ <br className={styles.br} />
       каркасные дома <br className={styles.br} />
-      в Москве и Подмосковье <br className={styles.br} />
+      в Москве <br className={styles.br} />
+      и Подмосковье <br className={styles.br} />
       честно и на любой бюджет
     </h1>
   );

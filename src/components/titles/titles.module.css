@@ -63,7 +63,7 @@
     line-height: 21px;
   }
   .br {
-    display: none;
+    display: block;
   }
 }
 
@@ -99,8 +99,5 @@
 
   .h3 {
     font-size: 50px;
-  }
-  .br {
-    display: block;
   }
 }
