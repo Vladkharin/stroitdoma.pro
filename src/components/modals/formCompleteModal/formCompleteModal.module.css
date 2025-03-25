@@ -1,0 +1,88 @@
+.modal {
+  background-color: #fff;
+  padding: 40px 40px 50px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: default;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal_wrapper {
+  background-color: #fff;
+  padding: 40px 40px 50px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  cursor: default;
+  width: 320px;
+  height: 185px;
+}
+
+.modal_btn_close {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.complete {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #62c584;
+  border-radius: 100%;
+  position: relative;
+}
+
+.complete::after {
+  width: 15px;
+  height: 11px;
+  content: "\2713";
+  color: #62c584;
+  position: absolute;
+  top: 14px;
+  left: 16px;
+}
+
+.failure {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 1px solid red;
+  border-radius: 100%;
+  position: relative;
+}
+
+.failure::after {
+  width: 15px;
+  height: 11px;
+  content: "\2715";
+  color: red;
+  position: absolute;
+  top: 12px;
+  left: 18px;
+}
+
+.modal_text {
+  padding-top: 20px;
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}

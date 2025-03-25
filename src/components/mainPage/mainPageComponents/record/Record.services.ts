@@ -11,7 +11,8 @@ export async function postData(
   event: React.FormEvent<HTMLFormElement>,
   setInputsError: React.Dispatch<React.SetStateAction<typeInputsError>>,
   inputsError: typeInputsError,
-  setFetchStatus: React.Dispatch<React.SetStateAction<string>>
+  setFetchStatus: React.Dispatch<React.SetStateAction<string>>,
+  setBodyStyle: React.Dispatch<React.SetStateAction<string>>
 ) {
   event.preventDefault();
 
@@ -44,6 +45,8 @@ export async function postData(
     } else {
       setFetchStatus(FORM_STATUS_MESSAGE.failure);
     }
+
+    setBodyStyle("hidden");
   } else {
     setFetchStatus("");
   }
@@ -88,12 +91,13 @@ function formValidate(
         error++;
       }
 
-      if (input.value.length < 15 && input.value.length > 0) {
+      if (input.value.length < 18 && input.value.length > 0) {
         obj = { ...obj, inputPhone: "Слишком короткое значение" };
         error++;
       }
     }
   }
+
   setFetchStatus("");
   setInputsError(obj);
 

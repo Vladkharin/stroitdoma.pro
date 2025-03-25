@@ -2,12 +2,13 @@ import styles from "./Record.module.css";
 
 import { MaskedInput, createDefaultMaskGenerator } from "react-hook-mask";
 import { useState } from "react";
-import { H1, H4 } from "../../../titles/Titles";
+import { H1White, H4 } from "../../../titles/Titles";
 import { postData } from "./Record.services";
+import { FormCompleteModal } from "../../../modals/formCompleteModal/formCompleteModal";
 
 const maskGenerator = createDefaultMaskGenerator("+7 (999) 999-99-99");
 
-export function Record() {
+export function Record({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.SetStateAction<string>> }) {
   const [inputPhoneValue, setInputPhoneValue] = useState<string>("");
   const [fetchStatus, setFetchStatus] = useState<string>("");
   const [inputsError, setInputsError] = useState<{ inputName: string; inputPhone: string }>({
@@ -15,15 +16,20 @@ export function Record() {
     inputPhone: "",
   });
 
+  console.log(fetchStatus);
+
   return (
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
-          <H1 text={"Запись на экскурсию"} />
+          <H1White text={"Запись на экскурсию"} />
           <div className={styles.wrapper}>
-            <H4 texts={["Посмотрите, как мы строим,", "прежде чем заключать договор.", "Каждые выходные показываем клиентам стройку."]} />
+            <H4
+              color={"white"}
+              texts={["Посмотрите, как мы строим,", "прежде чем заключать договор.", "Каждые выходные показываем клиентам стройку."]}
+            />
 
-            <form className={styles.form} onSubmit={(event) => postData(event, setInputsError, inputsError, setFetchStatus)}>
+            <form className={styles.form} onSubmit={(event) => postData(event, setInputsError, inputsError, setFetchStatus, setBodyStyle)}>
               <input
                 className={styles.input}
                 type="text"
@@ -88,17 +94,6 @@ export function Record() {
               >
                 Слишком короткое значение
               </div>
-              <div
-                className={`${styles.modal} ${
-                  fetchStatus === "Спасибо! Скоро мы с вами свяжемся" || fetchStatus === "Что-то пошло не так..." ? "" : styles.none
-                }`}
-              >
-                <div className={styles.modal_wrapper}>
-                  <img src="./icons/crestikBlack.svg" alt="" className={styles.modal_btn_close} onClick={() => setFetchStatus("")} />
-                  <div className={fetchStatus === "Спасибо! Скоро мы с вами свяжемся" ? styles.complete : styles.failure}></div>
-                  <div className={styles.modal_text}>{fetchStatus}</div>
-                </div>
-              </div>
             </form>
           </div>
         </div>
@@ -107,6 +102,7 @@ export function Record() {
           <img className={styles.img} src={`./img/record.jpg`} alt="" />
         </div>
       </div>
+      <FormCompleteModal fetchStatus={fetchStatus} setFetchStatus={setFetchStatus} setBodyStyle={setBodyStyle} />
     </section>
   );
 }

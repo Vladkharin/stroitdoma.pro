@@ -1,9 +1,25 @@
+import React from "react";
 import styles from "./titles.module.css";
 
 export function H1({ text }: { text: string }) {
   return <h1 className={styles.h1}>{text}</h1>;
 }
 
+export function H1Black({ text }: { text: string }) {
+  return (
+    <h1 className={styles.h1} style={{ color: "black" }}>
+      {text}
+    </h1>
+  );
+}
+
+export function H1White({ text }: { text: string }) {
+  return (
+    <h1 className={styles.h1} style={{ color: "white" }}>
+      {text}
+    </h1>
+  );
+}
 export function H1WithBr() {
   return (
     <h1 className={styles.h1}>
@@ -23,24 +39,24 @@ export function H2({ text, size }: { text: string; size: string }) {
 export function H3({ texts }: { texts: string[] }) {
   return (
     <h3 className={styles.h3}>
-      {texts.map((text) => (
-        <>
+      {texts.map((text, index) => (
+        <React.Fragment key={index}>
           {text}
           <br />
-        </>
+        </React.Fragment>
       ))}
     </h3>
   );
 }
 
-export function H4({ texts }: { texts: string[] }) {
+export function H4({ texts, color }: { texts: string[]; color: string }) {
   return (
-    <h4 className={styles.h4}>
-      {texts.map((text) => (
-        <>
+    <h4 className={styles.h4} style={{ color: color }}>
+      {texts.map((text, index) => (
+        <React.Fragment key={index}>
           {text}
           <br />
-        </>
+        </React.Fragment>
       ))}
     </h4>
   );

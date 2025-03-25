@@ -11,9 +11,11 @@ import { IconsFixed } from "../iconsFixed/IconsFixed";
 export function MainPage({
   positionImg,
   setActiveTab,
+  setBodyStyle,
 }: {
   positionImg: string;
   setActiveTab: React.Dispatch<React.SetStateAction<typeChoiceTypeHouse>>;
+  setBodyStyle: React.Dispatch<React.SetStateAction<string>>;
 }) {
   useEffect(() => {
     const y = window.scrollY;
@@ -28,7 +30,7 @@ export function MainPage({
       <Choose />
       <Catalog setActiveTab={setActiveTab} />
       <BuiltHouses />
-      <Record />
+      <Record setBodyStyle={setBodyStyle} />
       <PlotHouse positionImg={positionImg} />
     </>
   );

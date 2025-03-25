@@ -49,7 +49,10 @@ function App() {
     <Router>
       <Header setBodyStyle={setBodyStyle} setActiveTab={setActiveTab} />
       <Routes>
-        <Route path={"/:anchor?"} element={<MainPage positionImg={picturePosition} setActiveTab={setActiveTab} />} />
+        <Route
+          path={"/:anchor?"}
+          element={<MainPage positionImg={picturePosition} setActiveTab={setActiveTab} setBodyStyle={setBodyStyle} />}
+        />
         <Route path={"/catalog"} element={<CatalogPage setActiveTab={setActiveTab} activeTab={activeTab} />}></Route>
         <Route path={"/built_houses"} element={<BuiltHousesPage />} />
         <Route path={"/catalog/:houseName?"} element={<HousePage />} />

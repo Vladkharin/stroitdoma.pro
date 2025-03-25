@@ -49,7 +49,7 @@ export function PlotHouse({ positionImg }: { positionImg: string }) {
                 Подробнее
               </button>
             </form>
-            <H4 texts={["Если у вас нет участка, поможем в подборе подходящего.", "Все в 1 ипотеку!"]} />
+            <H4 color="black" texts={["Если у вас нет участка, поможем в подборе подходящего.", "Все в 1 ипотеку!"]} />
           </div>
         </div>
 
