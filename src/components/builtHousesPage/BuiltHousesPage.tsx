@@ -77,6 +77,8 @@ const IMGS: string[] = [
   "built71.jpg",
   "built72.jpg",
   "built73.jpg",
+  "built74.jpg",
+  "built75.jpg",
 ];
 
 export function BuiltHousesPage() {
