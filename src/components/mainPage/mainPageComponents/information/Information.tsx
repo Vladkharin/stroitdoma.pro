@@ -15,10 +15,7 @@ export function Information() {
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
             <H1WithBr />
-            <div className={styles.btns}>
-              <MediumButton text={"Рассчитать стоимость"} link={"/catalog"} zoom={1} />
-              <MediumButton text={"Посмотреть дома"} link={"/built_houses"} zoom={1} />
-            </div>
+            <MediumButton text={"Каталог"} link={"/catalog"} zoom={1} />
           </div>
           <Swiper
             className={styles.swiper}
@@ -49,17 +46,7 @@ export function Information() {
         </div>
         <div className={styles.information_mission}>
           <H2 text={"Миссия"} size={"small"} />
-          <H3
-            texts={[
-              "С 2016 года честно и надежно строим дома, в которых хочется жить. Свой дом — это просто!",
-              "",
-              "Фиксированная стоимость в договоре – без переплат",
-              "Собственное бригады – контроль качества на всех этапах",
-              "Строим по одобренной технологии с утеплением до -30°C",
-              "Фиксируем стоимость на этапе проектирования",
-            ]}
-          />
-          <MediumButton text="Посмотреть договор" link={"/"} zoom={1} />
+          <H3 texts={["Наша компания СТРОИТ дома.", " Честно, надежно, как себе.", "Свой дом - это просто и доступно каждому."]} />
         </div>
       </div>
     </section>

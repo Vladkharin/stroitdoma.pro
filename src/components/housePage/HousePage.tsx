@@ -25,6 +25,7 @@ import {
 } from "../../houses.ts";
 
 import { AdditionalServiceItems } from "./housePageComponents/additionalServiceItems/AdditionalServiceItems.tsx";
+import { IconsFixed } from "../iconsFixed/IconsFixed.tsx";
 // import { VideoComponent } from "./housePageComponents/VideoComponent/VideoComponent.tsx";
 
 export function HousePage() {
@@ -334,6 +335,7 @@ export function HousePage() {
       ) : (
         false
       )}
+      <IconsFixed path={".."} />
     </React.Fragment>
   );
 }

@@ -55,7 +55,7 @@ input[type="number"] {
 
 @media (min-width: 960px) {
   #root {
-    width: 100%;
+    width: 95%;
   }
   .container {
     width: 940px;
