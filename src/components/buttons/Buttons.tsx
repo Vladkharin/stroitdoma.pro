@@ -2,9 +2,24 @@ import { typeChoiceTypeHouse } from "../catalogPage/CatalogPage";
 import styles from "./Buttons.module.css";
 import { Link } from "react-router-dom";
 
-export function MediumButton({ link, text, zoom = 1 }: { link: string; text: string; zoom: number }) {
+export function MediumButton({
+  link,
+  text,
+  zoom = 1,
+  color = undefined,
+}: {
+  link: string;
+  text: string;
+  zoom: number;
+  color: string | undefined;
+}) {
   return (
-    <Link to={link} className={styles.medium_button} style={{ zoom: zoom }} onClick={() => window.scrollTo(0, 0)}>
+    <Link
+      to={link}
+      className={styles.medium_button}
+      style={{ zoom: zoom, backgroundColor: color ? "var(--white-color)" : "var(--orange-color)" }}
+      onClick={() => window.scrollTo(0, 0)}
+    >
       {text}
     </Link>
   );

@@ -1,3 +1,4 @@
+import { MediumButton } from "../../../buttons/Buttons";
 import { H2 } from "../../../titles/Titles";
 import styles from "./Choose.module.css";
 
@@ -10,8 +11,10 @@ export function Choose() {
           <div className={styles.tile_figure}>
             <h3>Комплектация</h3>
             <p className={styles.text}>
-              Можно выбрать вариант дома на любой бюджет и самому рассчитать финальную цену <br /> в калькуляторе.
+              Выберите свой идеальный дом на любой бюджет – от эконом до премиума. <br />
+              Рассчитайте стоимость в онлайн калькуляторе.
             </p>
+            <MediumButton text="Выбрать свои дом" link="/catalog" zoom={1} color="white" />
           </div>
         </div>
         <div className={styles.tile}>
