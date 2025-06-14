@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import styles from "./CatalogPage.module.css";
 
 import { fetchAdditionalServices, getActiveTypeHouses, stringConversion } from "./CatalogPage.services";
-import { IconsFixed } from "../iconsFixed/IconsFixed";
 
 export type typeAdditionalServices = {
   ДатаФормирования: string;
@@ -126,7 +125,6 @@ export function CatalogPage({
         </div>
         <ThirdBlockTiles />
       </div>
-      <IconsFixed path={"."} />
     </div>
   );
 }
