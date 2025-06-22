@@ -126,6 +126,7 @@ export function CatalogPage({
         </div>
         <ThirdBlockTiles />
       </div>
+      <IconsFixed path={"."} />
     </div>
   );
 }

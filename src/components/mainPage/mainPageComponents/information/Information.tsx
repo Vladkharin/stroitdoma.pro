@@ -15,10 +15,7 @@ export function Information() {
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
             <H1WithBr />
-            <div className={styles.btns}>
-              <MediumButton text={"Рассчитать стоимость"} link={"/catalog"} zoom={1} />
-              <MediumButton text={"Посмотреть дома"} link={"/built_houses"} zoom={1} />
-            </div>
+            <MediumButton text={"Каталог"} link={"/catalog"} zoom={1} />
           </div>
           <Swiper
             className={styles.swiper}

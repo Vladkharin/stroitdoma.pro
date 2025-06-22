@@ -29,7 +29,7 @@
 }
 
 .information_text {
-  height: auto;
+  height: 500px;
   width: 100%;
   background-color: var(--grey-color);
   display: flex;
@@ -70,7 +70,7 @@
 }
 
 .information_mission {
-  height: auto;
+  height: 500px;
   width: 100%;
   background-color: var(--orange-color);
   border-radius: 5px;
