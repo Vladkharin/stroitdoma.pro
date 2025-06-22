@@ -18,8 +18,12 @@ export function PlotHouse({ positionImg, setBodyStyle }: { positionImg: string; 
     <section className={styles.section}>
       <div className={styles.text_and_swiper_wrapper}>
         <div className={styles.block_text}>
-          <H1 texts={["Участок + дом"]} />
+          <H1 texts={["Ваш дом с участком ближе, чем кажется!"]} />
           <div className={styles.wrapper}>
+            <H4
+              color="black"
+              texts={["Не нашли землю? Бесплатно подберем идеальный вариант! ", "Оформление дома и участка — в одну ипотеку без хлопот.  "]}
+            />
             <form className={styles.form} onSubmit={(event) => postData(event, setInputsError, inputsError, setFetchStatus, setBodyStyle)}>
               <input
                 className={styles.input}
@@ -87,7 +91,6 @@ export function PlotHouse({ positionImg, setBodyStyle }: { positionImg: string; 
                 Слишком короткое значение
               </div>
             </form>
-            <H4 color="black" texts={["Если у вас нет участка, поможем в подборе подходящего.", "Все в 1 ипотеку!"]} />
           </div>
         </div>
 

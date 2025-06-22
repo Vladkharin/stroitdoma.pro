@@ -13,14 +13,25 @@ import { StubPage } from "./components/stubPage/StubPage";
 import { Footer } from "./components/footer/Footer";
 
 function App() {
-  // const [scroll, setScroll] = useState(0);
+  const [scroll, setScroll] = useState(0);
   const [bodyStyle, setBodyStyle] = useState("");
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = bodyStyle;
+  });
 
   const [picturePosition, setPicturePosition] = useState("vert");
 
   const [activeTab, setActiveTab] = useState<typeChoiceTypeHouse>({ type: "all" });
-
-  // const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -32,22 +43,13 @@ function App() {
     }
   }, []);
 
-  // const handleScroll = () => {
-  //   setScroll(window.scrollY);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
-
   useEffect(() => {
     document.body.style.overflow = bodyStyle;
   });
 
   return (
     <Router>
-      <Header setBodyStyle={setBodyStyle} setActiveTab={setActiveTab} />
+      <Header setBodyStyle={setBodyStyle} scroll={scroll} />
       <Routes>
         <Route
           path={"/:anchor?"}

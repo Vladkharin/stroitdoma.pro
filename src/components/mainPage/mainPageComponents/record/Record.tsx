@@ -24,7 +24,11 @@ export function Record({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
           <div className={styles.wrapper}>
             <H4
               color={"white"}
-              texts={["Посмотрите, как мы строим,", "прежде чем заключать договор.", "Каждые выходные показываем клиентам стройку."]}
+              texts={[
+                "Хотите увидеть строительный процесс лично?",
+                "Запишитесь на экскурсию на реальный объект.",
+                " Вы увидите качество материалов, пообщаетесь с технологом и обсудите стоимость дома.",
+              ]}
             />
 
             <form className={styles.form} onSubmit={(event) => postData(event, setInputsError, inputsError, setFetchStatus, setBodyStyle)}>
@@ -101,6 +105,7 @@ export function Record({ setBodyStyle }: { setBodyStyle: React.Dispatch<React.Se
         </div>
       </div>
       <FormCompleteModal fetchStatus={fetchStatus} setFetchStatus={setFetchStatus} setBodyStyle={setBodyStyle} />
+      <div id="record" style={{ position: "absolute", top: "-100px" }}></div>
     </section>
   );
 }

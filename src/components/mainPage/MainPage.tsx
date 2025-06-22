@@ -25,7 +25,7 @@ export function MainPage({
   return (
     <>
       <Information />
-      <Choose />
+      <Choose setBodyStyle={setBodyStyle} />
       <Catalog setActiveTab={setActiveTab} />
       <BuiltHouses />
       <Record setBodyStyle={setBodyStyle} />

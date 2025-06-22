@@ -40,6 +40,7 @@
   border-radius: 5px;
   padding: 40px 10px 20px 10px;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 .text {
@@ -88,9 +89,22 @@
   color: #ffffff;
 }
 
+.btns {
+  display: flex;
+  gap: 5px;
+}
+
+.btns > button {
+  flex-basis: 50%;
+}
+
 @media (min-width: 480px) {
   .br {
     display: none;
+  }
+
+  .information_text {
+    margin-top: 40px;
   }
 }
 
@@ -99,9 +113,14 @@
     height: auto;
   }
 
+  .information_text {
+    margin-top: 0px;
+  }
+
   .text_and_swiper_wrapper {
     flex-direction: row;
     height: 98vh;
+    margin-top: 95px;
   }
 
   .information_text {

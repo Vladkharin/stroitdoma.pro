@@ -86,7 +86,7 @@ export function BuiltHousesPage() {
       <div className={styles.information_wrapper}>
         <div className={styles.text_and_swiper_wrapper}>
           <div className={styles.information_text}>
-            <H1 texts={["Дома, в которых", "уже живут"]} />
+            <H1 texts={["Дома, которые мы построили для наших клиентов"]} />
             <MediumButton text={"Выбрать дом"} link={"/catalog"} zoom={1} />
           </div>
           <Swiper

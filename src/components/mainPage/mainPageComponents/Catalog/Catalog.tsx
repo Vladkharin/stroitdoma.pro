@@ -6,7 +6,7 @@ import styles from "./Catalog.module.css";
 export function Catalog({ setActiveTab }: { setActiveTab: React.Dispatch<React.SetStateAction<typeChoiceTypeHouse>> }) {
   return (
     <section className={styles.section}>
-      <H2 text={"Каталог"} size="big" />
+      <H2 text={"Каталог готовых проектов"} size="big" />
       <div className={styles.wrapper}>
         <div className={styles.tile}>
           <img src={"./img/catalog_1.jpg"} alt="" />
@@ -26,6 +26,7 @@ export function Catalog({ setActiveTab }: { setActiveTab: React.Dispatch<React.S
           <CatalogButton text={"Зайти"} link={"/catalog"} zoom={0.5} setActiveTab={setActiveTab} state={{ type: "bathhouse" }} />
         </div>
       </div>
+      <div id="catalog" style={{ position: "absolute", top: "-100px" }}></div>
     </section>
   );
 }

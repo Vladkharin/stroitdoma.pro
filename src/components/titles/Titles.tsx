@@ -32,12 +32,11 @@ export function H1White({ text }: { text: string }) {
 export function H1WithBr() {
   return (
     <h1 className={styles.h1}>
-      компания <br className={styles.br} />
-      СТРОИТ <br className={styles.br} />
-      каркасные дома <br className={styles.br} />
-      в Москве <br className={styles.br} />
-      и Подмосковье <br className={styles.br} />
-      честно и на любой бюджет
+      Строим каркасные дома в Москве, области и дальнем Подмосковье <br className={styles.br} /> <br className={styles.br} />
+      От 2,8 млн рублей за дом под ключ <br className={styles.br} /> <br className={styles.br} />
+      Срок строительства - 90 дней <br className={styles.br} /> <br className={styles.br} />
+      Гарантия на конструктив <br className={styles.br} /> <br className={styles.br} />
+      Поможем с участком и ипотекой <br className={styles.br} /> <br className={styles.br} />
     </h1>
   );
 }

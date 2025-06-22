@@ -274,11 +274,7 @@ export function HousePage() {
               </button>
               {house ? houseImgs(house, activeImgIndex, setStateModalImg, setActiveImgIndex) : <div>Загружается</div>}
             </div>
-            {coustHouse && house ? (
-              houseInformation(house, coustHouse, priceAdditionalServices, setStateModalForm, facadeFinishing)
-            ) : (
-              <div>Загружается</div>
-            )}
+            {coustHouse && house ? houseInformation(house) : <div>Загружается</div>}
           </div>
         </div>
       </div>
@@ -360,15 +356,7 @@ function sumCoustHouseAndFacadeFinishing(coustHouse: string, facadeFinishing: ty
   return price;
 }
 
-function houseInformation(
-  house: typeItemHouse,
-  coustHouse: string,
-  priceAdditionalServices: number,
-  // heightFromTopVideosBlock: number,
-  // positionY: number,
-  setStateModalForm: React.Dispatch<React.SetStateAction<boolean>>,
-  facadeFinishing: typeListActiveAdditionalServices
-) {
+function houseInformation(house: typeItemHouse) {
   return (
     <div className={styles.information_texts}>
       {house.information
@@ -397,34 +385,6 @@ function houseInformation(
             );
           })
         : false}
-      <div className={styles.buttons_wrapper}>
-        <div className={styles.button}>
-          Стоимость дома
-          <span>
-            {coustHouse == "Скоро будет доступна"
-              ? ": Скоро будет"
-              : `: ${stringConversion(sumCoustHouseAndFacadeFinishing(coustHouse, facadeFinishing))} руб.`}
-          </span>
-        </div>
-        <div className={styles.button}>
-          Дополнительные услуги
-          <span>
-            {coustHouse == "Скоро будет доступна" ? ": Скоро будет" : `: ${stringConversion(priceAdditionalServices.toString())} руб.`}
-          </span>
-        </div>
-        {/* <div
-          className={`${styles.button} ${styles.blue}`}
-          style={{ display: house.videos?.length != 0 ? "" : "none" }}
-          onClick={() => {
-            heightFromTopVideosBlock ? window.scroll(0, positionY) : false;
-          }}
-        >
-          Посмотреть видео
-        </div> */}
-        <div className={`${styles.button} ${styles.orange}`} style={{ display: "none" }} onClick={() => setStateModalForm(true)}>
-          Получить коммерческое предложение
-        </div>
-      </div>
     </div>
   );
 }

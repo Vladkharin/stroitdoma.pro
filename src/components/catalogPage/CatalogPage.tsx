@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import styles from "./CatalogPage.module.css";
 
 import { fetchAdditionalServices, getActiveTypeHouses, stringConversion } from "./CatalogPage.services";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export type typeAdditionalServices = {
   ДатаФормирования: string;
@@ -90,7 +91,7 @@ export function CatalogPage({
   }
 
   return (
-    <div id="catalog" className={styles.catalog}>
+    <div className={styles.catalog}>
       <div className={styles.wrapper}>
         <div className={styles.header}>Каталог</div>
         <div className={styles.menu_wrapper}>
@@ -141,6 +142,8 @@ function ThirdBlockTile(task: typeItemHouse) {
 }
 
 function ModalHouse(task: typeItemHouse) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   if (!task.coust || !task.mortgage) {
     return;
   }
@@ -148,16 +151,22 @@ function ModalHouse(task: typeItemHouse) {
   return (
     <React.Fragment key={task.code}>
       <Link to={`/catalog/${task.link}`} state={{ task: task }} className={styles.tile}>
-        <img className={styles.tile_img} src={task.img} alt={task.alt} />
+        {/* <img className={styles.tile_img} src={task.img} alt={task.alt} /> */}
+        <Swiper slidesPerView={1} className={styles.tile_img} spaceBetween={50} loop={true}>
+          {task.imgs?.map((img, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img className={styles.tile_img} src={img} alt="slide" />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
         <div className={styles.tile_text}>{task.information ? task.information[0] : false}</div>
         <div className={styles.tile_text}>{task.information ? task.information[1] : false}</div>
         <div className={styles.tile_text} id={task.code}>
           Стоимость: {stringConversion(task.coust)} руб.
         </div>
-        <div className={styles.tile_text}>В ипотеку: от {stringConversion(task.mortgage)} руб.</div>
-        <div className={styles.tile_link}>
-          <img src="./icons/textSvg.svg" alt="link" />
-        </div>
+        <button className={styles.small_btn}>Рассчитать стоимость</button>
       </Link>
     </React.Fragment>
   );
@@ -189,8 +198,7 @@ function ModalTypeHousesOrBathHouses(task: typeItemHouse) {
   return (
     <React.Fragment key={task.code}>
       <div className={styles.category_header}>
-        {task.typeHouse}
-        <div className={styles.line}></div>
+        {task.typeHouse} <div className={styles.line}></div>
       </div>
     </React.Fragment>
   );

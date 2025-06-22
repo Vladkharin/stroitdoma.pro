@@ -1,6 +1,7 @@
 .catalog {
   display: flex;
   padding: 0 30px;
+  padding-top: 100px;
 }
 
 .inner {
@@ -33,7 +34,7 @@
   height: 48px;
   text-align: center;
   color: #31373e;
-  background: rgba(256, 256, 256, 1);
+  background: var(--grey-color);
   border: 1px solid #31373e;
   font-size: 14px;
   font-weight: 400;
@@ -46,9 +47,7 @@
 .tile {
   position: relative;
   height: 280px;
-  width: 145px;
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
+  width: 200px;
   display: flex;
   flex-direction: column;
   padding-left: 5px;
@@ -92,13 +91,36 @@
   right: 0;
 }
 
+.small_btn {
+  margin-top: 5px;
+  height: 45px;
+  width: 140px;
+  background-color: var(--orange-color);
+  color: var(--white-color);
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: none;
+  border: none;
+  font-size: 12px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--white-color);
+    color: var(--orange-color);
+    border: 1px solid var(--orange-color);
+  }
+}
+
 @media (min-width: 360px) {
   .container_enlargement {
     width: 350px;
   }
 
   .tile {
-    width: 160px;
     height: 290px;
     padding-left: 5px;
   }
@@ -118,7 +140,7 @@
   }
 
   .tile {
-    width: 185px;
+    width: 210px;
     height: 310px;
   }
 
@@ -129,7 +151,7 @@
 
 @media (min-width: 481px) {
   .catalog {
-    padding-top: 69px;
+    padding-top: 110px;
     display: block;
   }
 
@@ -164,9 +186,7 @@
 
   .tile {
     height: 390px;
-    width: 200px;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
+    width: 225px;
     display: flex;
     flex-direction: column;
     padding-left: 10px;
@@ -174,6 +194,7 @@
 
   .tile_img {
     margin-bottom: 20px;
+    width: 100%;
   }
 
   .tile_text {
@@ -243,6 +264,11 @@
   }
 }
 @media (min-width: 960px) {
+  .small_btn {
+    height: 60px;
+    width: 180px;
+    font-size: 16px;
+  }
 }
 @media (min-width: 1200px) {
   .inner {
@@ -270,6 +296,6 @@
 }
 
 .change_bg {
-  background: #31373e;
+  background: var(--orange-color);
   color: #ffffff;
 }
