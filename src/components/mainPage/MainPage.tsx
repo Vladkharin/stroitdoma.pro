@@ -6,7 +6,6 @@ import { BuiltHouses } from "./mainPageComponents/builtHouses/builtHouses";
 import { Record } from "./mainPageComponents/record/Record";
 import { PlotHouse } from "./mainPageComponents/plotHouse/PlotHouse";
 import { typeChoiceTypeHouse } from "../catalogPage/CatalogPage";
-import { IconsFixed } from "../iconsFixed/IconsFixed";
 
 export function MainPage({
   positionImg,
@@ -25,7 +24,6 @@ export function MainPage({
 
   return (
     <>
-      <IconsFixed path={"."} />
       <Information />
       <Choose setBodyStyle={setBodyStyle} />
       <Catalog setActiveTab={setActiveTab} />

@@ -28,6 +28,7 @@ input[type="number"] {
 .container {
   margin: 0 auto;
   width: 310px;
+  height: 100%;
 }
 
 @media (min-width: 481px) {
@@ -55,7 +56,7 @@ input[type="number"] {
 
 @media (min-width: 960px) {
   #root {
-    width: 95%;
+    width: 100%;
   }
   .container {
     width: 940px;

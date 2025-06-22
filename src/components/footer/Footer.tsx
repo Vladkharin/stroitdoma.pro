@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 
 export function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="contacts" className={styles.footer}>
       <div className={styles.wrapper_mob}>
         <div className={styles.item}>
           <h3 className={styles.title}>Разделы</h3>

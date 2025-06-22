@@ -27,14 +27,17 @@ export function Header({ scroll, setBodyStyle }: typeHeaderProps) {
                 }}
               />
               <div className={styles.links}>
-                <a href="#about" className={styles.link}>
-                  О нас
-                </a>
-                <a href="#catalog" className={styles.link}>
+                <Link to={"/"} className={styles.link}>
+                  Главная
+                </Link>
+                <Link to="/catalog" className={styles.link}>
                   Каталог
-                </a>
-                <a href="#record" className={styles.link}>
-                  Запись на экскурсию
+                </Link>
+                <Link to="/built_houses" className={styles.link}>
+                  Построенные дома
+                </Link>
+                <a href="#contacts" className={styles.link}>
+                  Контакты
                 </a>
               </div>
             </div>

@@ -7,7 +7,6 @@ import "swiper/css/parallax";
 import "swiper/css/autoplay";
 import { H1 } from "../titles/Titles";
 import { MediumButton } from "../buttons/Buttons";
-import { IconsFixed } from "../iconsFixed/IconsFixed";
 
 const IMGS: string[] = [
   "built6.jpg",
@@ -127,7 +126,6 @@ export function BuiltHousesPage() {
           })}
         </div>
       </div>
-      <IconsFixed path={"."} />
     </section>
   );
 }
