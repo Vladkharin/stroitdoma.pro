@@ -152,7 +152,7 @@ function ModalHouse(task: typeItemHouse) {
     <React.Fragment key={task.code}>
       <Link to={`/catalog/${task.link}`} state={{ task: task }} className={styles.tile}>
         {/* <img className={styles.tile_img} src={task.img} alt={task.alt} /> */}
-        <Swiper slidesPerView={1} className={styles.tile_img} spaceBetween={50} loop={true}>
+        <Swiper style={{ width: "100%" }} slidesPerView={1} className={styles.tile_img} spaceBetween={50} loop={true}>
           {task.imgs?.map((img, index) => {
             return (
               <SwiperSlide key={index}>
@@ -180,7 +180,15 @@ function ModalBathHouse(task: typeItemHouse) {
   return (
     <React.Fragment key={task.code}>
       <Link to={`/catalog/${task.link}`} state={{ task: task }} className={styles.tile}>
-        <img className={styles.tile_img} src={task.img} alt={task.alt} />
+        <Swiper style={{ width: "100%" }} slidesPerView={1} className={styles.tile_img} spaceBetween={50} loop={true}>
+          {task.imgs?.map((img, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img className={styles.tile_img} src={img} alt="slide" />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
         <div className={styles.tile_text}>{task.information ? task.information[0] : false}</div>
         <div className={styles.tile_text}>{task.information ? task.information[1] : false}</div>
         <div className={styles.tile_text} id={task.code}>

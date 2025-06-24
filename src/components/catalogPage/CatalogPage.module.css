@@ -54,6 +54,11 @@
   text-decoration: none;
 }
 
+.tile_img {
+  height: 100%;
+  width: 100%;
+}
+
 .tile_text {
   width: 100%;
   height: 35px;

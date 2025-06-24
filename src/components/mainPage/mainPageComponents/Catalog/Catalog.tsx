@@ -9,15 +9,23 @@ export function Catalog({ setActiveTab }: { setActiveTab: React.Dispatch<React.S
     <section className={styles.section}>
       <H2 text={"Каталог готовых проектов"} size="big" />
       <div className={styles.wrapper}>
-        <Swiper slidesPerView={2} spaceBetween={50} loop={true}>
-          <SwiperSlide>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={50}
+          loop={true}
+          breakpoints={{
+            960: { slidesPerView: 2 },
+          }}
+          style={{ width: "100%" }}
+        >
+          <SwiperSlide style={{ width: "100%" }}>
             <div className={styles.tile}>
               <img src={"./img/catalog_1.jpg"} alt="" />
               <p className={styles.name}>1 этаж</p>
               <CatalogButton text={"Зайти"} link={"/catalog"} zoom={0.5} setActiveTab={setActiveTab} state={{ type: "cottage" }} />
             </div>
           </SwiperSlide>
-          <SwiperSlide style={{ flexBasis: "50%" }}>
+          <SwiperSlide style={{ width: "100%" }}>
             <div className={styles.tile}>
               <img src={"./img/catalog_3.jpg"} alt="" />
 
@@ -25,7 +33,7 @@ export function Catalog({ setActiveTab }: { setActiveTab: React.Dispatch<React.S
               <CatalogButton text={"Зайти"} link={"/catalog"} zoom={0.5} setActiveTab={setActiveTab} state={{ type: "two-storey house" }} />
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide style={{ width: "100%" }}>
             <div className={styles.tile}>
               <img src={"./img/catalog_2.jpg"} alt="" />
 

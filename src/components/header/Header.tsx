@@ -11,6 +11,10 @@ type typeHeaderProps = {
 export function Header({ scroll, setBodyStyle }: typeHeaderProps) {
   const [menuTel, setMenuTel] = useState<boolean>(false);
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   if (useLocation().pathname == "/") {
     return (
       <nav className={`${styles.nav} ${scroll > 93 ? styles.nav_blue : ""}`}>
@@ -27,13 +31,13 @@ export function Header({ scroll, setBodyStyle }: typeHeaderProps) {
                 }}
               />
               <div className={styles.links}>
-                <Link to={"/"} className={styles.link}>
+                <Link to={"/"} className={styles.link} onClick={scrollToTop}>
                   Главная
                 </Link>
-                <Link to="/catalog" className={styles.link}>
+                <Link to="/catalog" className={styles.link} onClick={scrollToTop}>
                   Каталог
                 </Link>
-                <Link to="/built_houses" className={styles.link}>
+                <Link to="/built_houses" className={styles.link} onClick={scrollToTop}>
                   Построенные дома
                 </Link>
                 <a href="#contacts" className={styles.link}>
