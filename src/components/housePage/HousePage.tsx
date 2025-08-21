@@ -158,7 +158,7 @@ export function HousePage() {
             });
           }
 
-          if (section["Раздел"] === "Строительство дома в базовой комплектации") {
+          if (section["Раздел"] === "Общестрой") {
             setCoustHouse(section["Подразделы"][0].Стоимость.toString());
           }
         });

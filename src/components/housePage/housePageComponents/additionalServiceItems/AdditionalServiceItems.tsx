@@ -26,7 +26,7 @@ export function AdditionalServiceItems(
   return (
     <div className={styles.services}>
       {services["Разделы"].map((service, index) => {
-        if (service["Раздел"] == "Строительство дома в базовой комплектации") {
+        if (service["Раздел"] == "Общестрой") {
           return;
         }
 
